@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<title>{% block title %}Gaelic Galore{% endblock title %}</title>
+
+{% block content %}
+  <h1 class="display-4 text-success">Homepage</h1>>
+  {% if user.is_authenticated %}
+    <h4>Hi {{ user.email }}</h4>
+  {% else %}
+    <h4>You are not logged in.</h4>
+    <a href="#">Log in</a>
+    <a href="#">Register</a>
+  {% endif %}
+  <img src="#" alt="#">
+{% endblock content %}
