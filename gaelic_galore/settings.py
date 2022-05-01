@@ -42,10 +42,14 @@ INSTALLED_APPS = [
     # 3rd party
     'allauth',
     'allauth.account',
+    'crispy_forms',
 
     # local
     'pages',
 ]
+
+# django-crispy-forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # allauth configuration
 # I learned this set-up method from 'Django for Professionals'
