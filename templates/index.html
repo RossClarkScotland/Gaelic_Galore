@@ -5,6 +5,7 @@
 
 {% block content %}
   <h1 class="display-4 text-success">Homepage</h1>>
+  <img src="{% static 'images/Skye.jpg' %}" alt="Skye">
   {% if user.is_authenticated %}
     <h4>Hi {{ user.email }}</h4>
   {% else %}
