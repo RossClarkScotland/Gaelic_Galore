@@ -35,6 +35,7 @@ INSTALLED_APPS = [
 
     # local
     'pages',
+    'courses',
 ]
 
 # django-crispy-forms
@@ -139,8 +140,7 @@ STATIC_URL = '/static/'
 # Puts static files within top-level static DIR in local development
 STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),)
 # Sets location of static files for production
-STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
-# States explicity where Django should find static file directories
+
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
