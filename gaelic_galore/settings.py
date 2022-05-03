@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     # local
     'pages',
     'courses',
+    'locations',
 ]
 
 # django-crispy-forms

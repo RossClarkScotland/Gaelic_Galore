@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ course.title }}{% endblock title %}
+
+{% block content %}
+
+    <div>
+      <h2><a href="{% url 'location_detail' location.pk %}">{{ location.name }}</a></h2>
+      {% if location.image %}
+        <img src="{{ location.image.url }}" alt="{{ location.name }}">
+      {% endif %}
+      <p>{{ location.description_place }}</p>
+      <p>{{ location.description_accomodation }}</p>
+    </div>
+
+{% endblock content %}

@@ -1,12 +1,14 @@
 from django.views.generic import ListView, DetailView
-from .models import Location, Course
+from .models import Course
 
 # Create your views here.
-class LocationListView(ListView):
-    model = Location
-    template_name = 'locations/location_list.html'
-
 class CourseListView(ListView):
     model = Course
+    context_object_name = 'course_list'
     template_name = 'courses/course_list.html'
+
+class CourseDetailView(DetailView):
+    model = Course
+    context_object_name = 'course'
+    template_name = 'courses/course_detail.html'
 

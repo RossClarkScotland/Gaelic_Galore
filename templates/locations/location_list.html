@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Locations{% endblock title %}
+
+{% block content %}
+
+  {% for location in location_list %}
+
+    <div>
+      <h2><a href="{{ location.get_absolute_url }}">{{ location.name }}</a></h2>
+    </div>
+
+  {% endfor %}
+
+{% endblock content %}
