@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Search{% endblock title %}
+
+{% block content %}
+  <h1>Your search results</h1>
+  {% for course in course_list %}
+    <div>
+      <h2><a href="{{ course.get_absolute_url }}">{{ course.title }}</a></h2>
+      <p>{{ course.level }}</p>
+      <p>{{ course.location }}</p>
+      <p>{{ course.price }}</p>
+    </div>
+  {% endfor %}
+
+{% endblock content %}
