@@ -45,18 +45,8 @@
               <a class="dropdown-item" href="{% url 'advanced' %}">Advanced</a>
             </div>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
-            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Locations
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{% url 'location_list' %}">All locations</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Skye</a>
-              <a class="dropdown-item" href="#">Lewis</a>
-              <a class="dropdown-item" href="#">Barra</a>
-            </div>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'location_list' %}">Our locations<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#">About<span class="sr-only">(current)</span></a>

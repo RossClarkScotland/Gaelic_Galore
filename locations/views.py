@@ -13,3 +13,6 @@ class LocationDetailView(DetailView):
     model = Location
     context_object_name = 'location'
     template_name = 'locations/location_detail.html'
+
+
+
