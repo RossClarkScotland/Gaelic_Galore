@@ -31,3 +31,27 @@ class SearchResultsListView(ListView):
         )
     """ Note from the above the different syntax required when
     searching on a foreign key!!!!"""
+
+
+
+class AdvancedListView(ListView):
+    model = Course
+    template_name = 'courses/advanced.html'
+
+    def get_queryset(self):
+        return Course.objects.all().filter(level='Advanced')
+
+class IntermediateListView(ListView):
+    model = Course
+    template_name = 'courses/intermediate.html'
+
+    def get_queryset(self):
+        return Course.objects.all().filter(level='Intermediate')
+
+class BeginnerListView(ListView):
+    model = Course
+    template_name = 'courses/beginner.html'
+
+    def get_queryset(self):
+        return Course.objects.all().filter(level='Beginner')
+

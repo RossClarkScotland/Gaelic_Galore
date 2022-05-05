@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Beginner Courses{% endblock title %}
+
+{% block content %}
+
+  {% for course in course_list %}
+
+    <div>
+      <h2><a href="{{ course.get_absolute_url }}">{{ course.title }}</a></h2>
+    </div>
+
+  {% endfor %}
+
+{% endblock content %}
