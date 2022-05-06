@@ -1,3 +1,13 @@
 h2 {
     color: blue;
 }
+
+
+.card-wide {
+    width: 100%;
+}
+
+.cart-img {
+    width: 1rem; 
+    height: 1rem;
+}

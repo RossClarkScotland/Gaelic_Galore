@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="row">
+  <div class="col-lg-12 text-center mt-3 mb-3">
+    <h1>Your shopping basket</h1>
+  </div>
+</div>
+  <br>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <h2>Items:</h2>
+      <div class="card card-wide">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Course: {{ course.name }} </li>
+          <li class="list-group-item">Price: {{ course.price }} </li>
+          <li class="list-group-item">Quantity: {{ course.qty }} </li>
+          <li class="list-group-item">Total: </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-6">
+        <h2 class="text-center">Your order total:</h2>
+    </div>
+  </div>
+
+  <div class="col-md-12 text-center mt-5">
+      <a class="btn btn-primary btn-lg mr-1" href="#">GO TO CHECKOUT</a>
+      <a class="btn btn-outline-primary btn-lg ml-1"href="{% url 'course_list' %}">Continue shopping</a>
+  </div>
+
+
+
+{% endblock content %}
