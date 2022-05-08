@@ -50,9 +50,6 @@
           <li class="nav-item active">
             <a class="nav-link" href="{% url 'location_list' %}">Our locations<span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'cart' %}">Cart<span class="sr-only">(current)</span></a>
-          </li>
           {% if user.is_authenticated %}
             <li class="nav-item active mr-3">
               <a class="nav-link" href="{% url 'account_logout' %}">Logout<span class="sr-only">(current)</span></a>
@@ -70,6 +67,10 @@
           <input name="q" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
         </form>
+      </div>
+      <div class="nav-item">
+        <a class="nav-link fa fa-shopping-cart" aria-hidden="true" 
+        href="{% url 'cart' %}"><span class="sr-only">(current)</span>{{ total }}</a>
       </div>
 </nav>
   </header>
