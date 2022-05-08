@@ -9,19 +9,16 @@
       <h1>Your shopping cart</h1>
     </div>
   </div>
-    <br>
-    <div>{{ cart_items }}</div>
     <div class="row">
       <div class="col-lg-6">
         <h2>Items:</h2>
         {% for item in cart_items %}
           <div class="card card-wide">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">Course: {{ item.course.title }} </li>
+              <li class="list-group-item text-center text-uppercase">Course: {{ item.course.title }} </li>
               <li class="list-group-item">Level: {{ item.course.level }} </li>
               <li class="list-group-item">Price: {{ item.course.price }} </li>
               <li class="list-group-item">Quantity: {{ item.qty }} </li>
-              <li class="list-group-item">Subtotal:  </li>
             </ul>
           </div>
           <br>
