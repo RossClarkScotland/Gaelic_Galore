@@ -7,7 +7,12 @@ h2 {
     width: 100%;
 }
 
-.cart-img {
-    width: 1rem; 
-    height: 1rem;
+/* cart +/- btns */
+
+.update-link,
+.remove-item {
+    cursor: pointer;
 }
+
+
+

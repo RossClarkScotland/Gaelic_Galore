@@ -3,7 +3,6 @@
 {% block title %}Advanced Courses{% endblock title %}
 
 {% block content %}
-<h1>test</h1>
   {% for course in course_list %}
     <div>
       <h2><a href="{{ course.get_absolute_url }}">{{ course.title }}</a></h2>
