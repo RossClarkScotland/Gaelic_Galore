@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'cart',
 ]
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
 # django-crispy-forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

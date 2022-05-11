@@ -1,29 +1,30 @@
 <script type="text/javascript">
-
 // The script below is essentially that from the Boutiqte Ado walkthrough
 
-   function enableDisableHandler(itemId) {
-         var currentValue = parseInt($(`#id_qty_${itemId}`).val());
-         var minusDisabled = currentValue < 2;
-         var plusDisabled = currentValue > 15;
-         $(`#decrease-qty_${itemId}`).prop('disabled', minusDisabled);
-         $(`#increase-qty_${itemId}`).prop('disabled', plusDisabled);
-      }
 
-   // Enables/disables inputs upon page loading
-   var qtyInputs = $('.qty_input');
-   for(var i = 0; i < qtyInputs.length; i++){
-   var itemId = $(qtyInputs[i]).data('item_id');
-   enableDisableHandler(itemId);
+    // Disable +/- buttons outside 1-15 range
+    function enableDisableHandler(itemId) {
+        var currentValue = parseInt($(`#id_qty_${itemId}`).val());
+        var minusDisabled = currentValue < 2;
+        var plusDisabled = currentValue > 15;
+        $(`#decrease-qty_${itemId}`).prop('disabled', minusDisabled);
+        $(`#increase-qty_${itemId}`).prop('disabled', plusDisabled);
     }
 
-    // Checks enable/disable when input is changed
+    // Enabling/disabling inputs on page load
+    var allQtyInputs = $('.qty_input');
+    for(var i = 0; i < allQtyInputs.length; i++){
+        var itemId = $(allQtyInputs[i]).data('item_id');
+        enableDisableHandler(itemId);
+    }
+
+    // Check enable/disable every time the input is changed
     $('.qty_input').change(function() {
         var itemId = $(this).data('item_id');
         enableDisableHandler(itemId);
     });
 
-    // Increase carts items quantity
+    // Increase quantity
     $('.increase-qty').click(function(e) {
        e.preventDefault();
        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
@@ -33,7 +34,7 @@
        enableDisableHandler(itemId);
     });
 
-    // Decrease carts items quantity
+    // Decrease quantity
     $('.decrease-qty').click(function(e) {
        e.preventDefault();
        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
@@ -42,6 +43,4 @@
        var itemId = $(this).data('item_id');
        enableDisableHandler(itemId);
     });
-
-
 </script>

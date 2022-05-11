@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.views.generic import TemplateView
+from django.contrib import messages
+from courses.models import Course
 
 # Create your views here.
 class CartView(TemplateView):
@@ -11,6 +13,7 @@ class CartView(TemplateView):
 def add_cart_item(request, item_id):
 # adds item to cart
 # logic pattern learned from Boutique Ado walktrhrough project
+    course = Course.objects.get(pk=item_id)
     qty = int(request.POST.get('qty'))
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
@@ -19,6 +22,7 @@ def add_cart_item(request, item_id):
         cart[item_id] += qty
     else:
         cart[item_id] = qty
+        messages.success(request, f'{course.title} added to cart')
 
     request.session['cart'] = cart
     return redirect(redirect_url)

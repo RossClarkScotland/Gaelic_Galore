@@ -22,10 +22,10 @@
           <div class="col-12">
               <p class="mt-1"><strong>Quantity:</strong></p>
               <div class="form-group w-25">
-                  <div class="input-group">
+                  <div class="input-group input-group-{{ course.id }}">
                     <div class="input-group-prepend">
-                        <button class="drecrease-qty btn"
-                            data-item_id="{{ course.id }}" id="decrease-qty_{{ course.id }}">
+                        <button class="drecrease-qty btn decrease-qty_{{ course.id }}"
+                            data-item_id="{{ course.id }}">
                             <span class="icon">
                                 <i class="fas fa-minus"></i>
                             </span>

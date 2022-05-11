@@ -1,1 +1,4 @@
-console.log('Ciamar a tha thu?')
+// script to show toasts
+
+type="text/javascript">
+$('.toast').toast('show');
