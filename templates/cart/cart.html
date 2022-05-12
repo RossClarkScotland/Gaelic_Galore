@@ -48,6 +48,7 @@
                   </button>
               </div>
           </div>
+        </div>
         </form>
         <a class="update-link text-info"><small>Update</small></a>
         <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
@@ -62,19 +63,19 @@
       </div>
 
       <div class="col-md-12 text-center mb-5 mt-1">
-          <a class="btn btn-primary btn-lg mr-1" href="#">GO TO CHECKOUT</a>
-          <a class="btn btn-outline-primary btn-lg ml-1"href="{% url 'course_list' %}">Continue shopping</a>
+          <a class="btn btn-primary btn-lg mr-1" href="{% url 'checkout' %}">GO TO CHECKOUT</a>
+          <a class="btn btn-outline-primary btn-lg ml-1"href="{% url 'checkout' %}">Continue shopping</a>
       </div>
   
 
-  {% else %}
+{% else %}
     <div>
       <h1 class="col-md-12 text-center mt-5">Mo chreach! Your cart is empty.</h1>
     </div>
     <div class="col-md-12 text-center mb-5 mt-1">
       <a class="btn btn-primary btn-lg"href="{% url 'course_list' %}">Continue shopping</a>
     </div>
-  {% endif %}
+{% endif %}
 
 
 
