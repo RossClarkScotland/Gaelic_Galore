@@ -28,7 +28,7 @@
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-prepend">
-                  <button class="drecrease-qty btn"
+                  <button class="decrease-qty btn"
                       data-item_id="{{ item.item_id }}" id="decrease-qty_{{ item.item_id }}">
                       <span>
                           <i class="fas fa-minus"></i>
@@ -88,7 +88,8 @@
 // Based on logic from Boutique Ado walkthrough project
   // Update quantity on click event
   $('.update-link').click(function(e) {
-      var form = $(this).prev('.update-form');
+      var form = $(this).prev('form');
+      form.submit();
   })
 
   // Remove item / reload on click event
