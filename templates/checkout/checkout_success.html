@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>Tapadh leat!</h2>
+            <p>Thank you for your Order!. You will receice an order confirmation at
+                 <strong>{{ order.email }}</strong>.</p>
+        </div>
+    </div>
+
+    <div class="col-md-12 text-center mb-5 mt-1">
+        <a class="btn btn-primary btn-lg" href="{% url 'course_list' %}">Continue shopping</a>
+    </div>
+
+{% endblock %}
