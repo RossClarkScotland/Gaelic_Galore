@@ -24,10 +24,10 @@ class Order(models.Model):
     # generates unique order number via UUID
         return uuid.uuid4().hex.upper()
 
-        def update_total(self):
-        # update total any time a line item is added
-            self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
-            self.save()
+    def update_total(self):
+    # update total any time a line item is added
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        self.save()
 
     def save(self, *args, **kwargs):
     # sets order number if not already set
