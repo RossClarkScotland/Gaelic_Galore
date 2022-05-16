@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from checkout.webhook_handler import Webhook_Handler
 import stripe
 
-# logic from Stripe documentation / adapted as per Boutique Ado walkthrough project
+# logic from Stripe documentation / adapted as per Boutique Ado walkthrough
 
 @require_POST
 @csrf_exempt
@@ -41,8 +41,8 @@ def webhook(request):
 
     # map webhook events to handler functions
     event_map = {
-        'payment_.succeeded': handler.handle_payment_succeeded,
-        'payment_._failed': handler.handle_payment_failed,
+        'payment_intent.succeeded': handler.handle_payment_succeeded,
+        'payment_intent.payment_failed': handler.handle_payment_intent_payment_failed,
     }
 
     # get webhook type from Stripe

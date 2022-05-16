@@ -8,8 +8,7 @@ from courses.models import Course
 # Create your models here.
 class Order(models.Model):
     order_number = models.CharField(max_length=20, null=False, editable=False)
-    first_name = models.CharField(max_length=30, null=False, blank=False)
-    surname = models.CharField(max_length=30, null=False, blank=False)
+    full_name = models.CharField(max_length=60, null=False, blank=False, default='John Doe')
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone = models.CharField(max_length=20, null=False, blank=False)
     country = models.CharField(max_length=50, null=False, blank=False)

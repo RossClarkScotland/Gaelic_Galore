@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 from .forms import OrderForm
@@ -6,8 +7,27 @@ from .models import Order, OrderLineItem
 from courses.models import Course
 from cart.contexts import cart_contents
 import stripe
+import json
 
-# Logic structure learned from Boutique Ado walkthrough project
+# logic structure learned from Boutique Ado walkthrough project
+
+@require_POST
+def cache_checkout_data(request):
+# determines whether user checked save data box in the form
+    try:
+        pid = request.POST.get('client_secret').split('_secret')[0]
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        stripe.PaymentIntent.modify(pid, metadata={
+            'cart': json.dumps(request.session.get('cart', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user,
+        })
+        return HttpResponse(status=200)
+
+    except Exception as e:
+        messages.error(request, 'Tha sinn duilich! We cannot process \
+            your payment. Please try again later.')
+        return HttpResponse(content=e, status=400)
 
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -17,8 +37,7 @@ def checkout(request):
         cart = request.session.get('cart', {})
 
         form_data = {
-            'first_name': request.POST['first_name'],
-            'surname': request.POST['surname'],
+            'full_name': request.POST['full_name'],
             'email': request.POST['email'],
             'phone': request.POST['phone'],
             'address': request.POST['address'],

@@ -48,9 +48,8 @@
         <form action="{% url 'checkout' %}" method="POST" id="payment-form">
             {% csrf_token %}
             <fieldset class="col-8 offset-2">
-                <legend class="fieldset-label small font-weight-bold px-2 w-auto">Name</legend>
-                {{ order_form.first_name | as_crispy_field }}
-                {{ order_form.surname | as_crispy_field }}
+                <legend class="fieldset-label small font-weight-bold px-2 w-auto">Full name</legend>
+                {{ order_form.full_name | as_crispy_field }}
             </fieldset>
             <fieldset class="col-8 offset-2">
                 <legend class="fieldset-label small font-weight-bold px-2 w-auto">Contact details</legend>
