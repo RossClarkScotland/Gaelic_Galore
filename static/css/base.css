@@ -125,3 +125,15 @@ As outlined in Boutique Ado walkthrough project */
     color: #000;
     border: 1px solid #000;
 }
+
+/* FOR COUNTRIES DROPDOWN IN CHECKOUT FORM - CSS AS IN BOUTIQUE ADO */
+
+select,
+select option {
+    color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
+}
