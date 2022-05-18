@@ -62,7 +62,7 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
-DEFAULT_FROM_EMAIL = 'rossclarkscotland@gmail.com'
+DEFAULT_FROM_EMAIL = 'gaelic@galore.com'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

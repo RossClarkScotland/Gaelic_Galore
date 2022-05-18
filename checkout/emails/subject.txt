@@ -1,0 +1,16 @@
+Halo {{ order.full_name }}!
+
+Mòran taing for choosing to take the next step on your language learning journey with us.
+Below you will find the details of your order.
+
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+
+Order Total: £{{ order.order_total }}
+
+
+We may contact you before your course starts at: {{ order.phone_number }}.
+
+If you have any questions, feel free to give us a shout at {{ contact_email }}.
+
+Thanks again and see you soon!

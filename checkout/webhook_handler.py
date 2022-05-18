@@ -1,6 +1,10 @@
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
 from .models import Order, OrderLineItem
 from courses.models import Course
+from profiles.models import UserProfile
 import json
 import time
 
@@ -11,6 +15,23 @@ class Webhook_Handler:
 
     def __init__(self, request):
         self.request = request
+
+    def _send_confirmation_email(self, order):
+    # sends confirmation emails
+        cust_email = order.email
+        subject = render_to_string(
+            'checkout/emails/subject.txt',
+            {'order': order})
+        body = render_to_string(
+            'checkout/emails/body.txt',
+            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+        
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [cust_email]
+        )       
 
     def handle_event(self, event):
     # handles an unknown/unexpected webhook event
@@ -25,6 +46,19 @@ class Webhook_Handler:
         cart = intent.metadata.cart
         save_info = intent.metadata.save_info
         billing_details = intent.charges.data[0].billing_details
+
+        # updates profile info if save_info checked
+        profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            profile = UserProfile.objects.get(user__username=username)
+            if save_info:
+                profile.default_phone__iexact=billing_details.phone,
+                profile.default_address__iexact=billing_details.address,
+                profile.default_postcode__iexact=shipping_details.address.postcode,
+                profile.default_town_or_city__iexact=billing_details.address.city,
+                profile.default_county__iexact=billing_details.address.county,
+                profile.save()
 
         order_exists = False
         attempt = 1
@@ -49,6 +83,7 @@ class Webhook_Handler:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
+            from django.conf import settings
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
@@ -57,6 +92,7 @@ class Webhook_Handler:
             try:
                 order = Order.objects.create(
                     full_name=billing_details.full_name,
+                    user_profile=profile,
                     email=billing_details.email,
                     phone=billing_details.phone,
                     address=billing_details.address,
@@ -82,6 +118,7 @@ class Webhook_Handler:
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
+        from django.conf import settings
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Order created in webhook',
             status=200)
