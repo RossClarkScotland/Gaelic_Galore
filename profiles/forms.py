@@ -12,14 +12,15 @@ class UserProfileForm(forms.ModelForm):
     # add placeholders + classes, remove auto-generated labels + set autofocus
         super().__init__(*args, **kwargs)
         placeholders = {
-            'default_phone': 'Phone Number',
+            'default_phone_number': 'phone_number',
             'default_town_or_city': 'Town or City',
-            'default_address': 'Address',
+            'default_street_address1': 'street_address1',
+            'default_street_address2': 'street_address2',
             'default_county': 'County',
             'default_postcode': 'Postcode',
         }
 
-        self.fields['default_phone'].widget.attrs['autofocus'] = True
+        self.fields['default_phone_number'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'default_country':
                 if self.fields[field].required:

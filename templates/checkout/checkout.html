@@ -54,11 +54,12 @@
             <fieldset class="col-8 offset-2">
                 <legend class="fieldset-label small font-weight-bold px-2 w-auto">Contact details</legend>
                 {{ order_form.email | as_crispy_field }}
-                {{ order_form.phone | as_crispy_field }}
+                {{ order_form.phone_number | as_crispy_field }}
             </fieldset>
             <fieldset class="col-8 offset-2">
                 <legend class="fieldset-label small font-weight-bold px-2 w-auto">Address</legend>
-                {{ order_form.address | as_crispy_field }}
+                {{ order_form.street_address1 | as_crispy_field }}
+                {{ order_form.street_address2 | as_crispy_field }}
                 {{ order_form.postcode | as_crispy_field }}
                 {{ order_form.town_or_city | as_crispy_field }}
                 {{ order_form.county | as_crispy_field }}

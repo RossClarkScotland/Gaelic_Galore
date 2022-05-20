@@ -41,13 +41,16 @@ def checkout(request):
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
-            'phone': request.POST['phone'],
-            'address': request.POST['address'],
+            'phone_number': request.POST['phone_number'],
+            'street_address1': request.POST['street_address1'],
+            'street_address2': request.POST['street_address2'],
             'postcode': request.POST['postcode'],
             'town_or_city': request.POST['town_or_city'],
             'county': request.POST['county'],
             'country': request.POST['country'],
         }
+
+        print(f"FULL NAME: {request.POST['full_name']}")
 
         order_form = OrderForm(form_data)
         if order_form.is_valid():
@@ -105,8 +108,9 @@ def checkout(request):
                 order_form = OrderForm(initial={
                     'full_name': profile.user.get_full_name(),
                     'email': profile.user.email,
-                    'phone_number': profile.default_phone,
-                    'address': profile.default_address,
+                    'phone_number_number': profile.default_phone_number,
+                    'street_address1': profile.default_street_address1,
+                    'street_address2': profile.default_street_address2,
                     'postcode': profile.default_postcode,
                     'town_or_city': profile.default_town_or_city,
                     'county': profile.default_county,
@@ -146,8 +150,9 @@ def checkout_success(request, order_number):
         # saves user info
         if save_info:
             profile_data = {
-                'default_phone': order.phone,
-                'default_address': order.address,
+                'default_phone_number': order.phone_number,
+                'default_street_address1': order.street_address1,
+                'default_street_address2': order.street_address2,
                 'default_postcode': order.postcode,
                 'default_town_or_city': order.town_or_city,
                 'default_county': order.county,
