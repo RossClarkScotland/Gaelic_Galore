@@ -35,7 +35,7 @@ def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
-        f'This shows your pasr order: {order_number}. '
+        f'This shows your past order: {order_number}. '
         'We sent you a wee confirmation email on the day.'
     ))
 
