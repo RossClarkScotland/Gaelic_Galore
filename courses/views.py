@@ -68,9 +68,9 @@ def add_course(request):
     if request.method == 'POST':
         form = CourseForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            course = form.save()
             messages.success(request, 'Sgonneil! New course added!')
-            return redirect(reverse('add_course'))
+            return redirect(reverse('course_detail', args=[course.id]))
         else:
             messages.error(request, 'Tha sinn duilich! Failed to add course.')
     else:
@@ -106,3 +106,11 @@ def edit_course(request, course_id):
     }
 
     return render(request, template, context)
+
+
+def delete_course(request, course_id):
+    # delete course store site
+    course = get_object_or_404(Course, pk=course_id)
+    course.delete()
+    messages.success(request, 'Sgonneil! Course deleted!')
+    return redirect(reverse('course_list'))

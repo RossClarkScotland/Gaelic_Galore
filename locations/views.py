@@ -22,9 +22,9 @@ def add_location(request):
     if request.method == 'POST':
         form = LocationForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            location = form.save()
             messages.success(request, 'Sgonneil! New location added!')
-            return redirect(reverse('add_location'))
+            return redirect(reverse('location_detail', args=[location.id]))
         else:
             messages.error(request, 'Tha sinn duilich! Failed to add location.')
     else:
@@ -60,3 +60,11 @@ def edit_location(request, location_id):
     }
 
     return render(request, template, context)
+
+def delete_location(request, location_id):
+    # delete location store site
+    location = get_object_or_404(Location, pk=location_id)
+    location.delete()
+    messages.success(request, 'Sgonneil! Location deleted!')
+    return redirect(reverse('location_list'))
+

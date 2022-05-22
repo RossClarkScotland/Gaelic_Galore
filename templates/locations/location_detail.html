@@ -12,5 +12,11 @@
       <p>{{ location.description_place }}</p>
       <p>{{ location.description_accomodation }}</p>
     </div>
+    {% if request.user.is_superuser %}
+      <div>
+          <a class="btn btn-lg btn-info" href="{% url 'edit_location' location.id %}">Edit location</a> | 
+          <a class="btn btn-lg btn-warning" href="{% url 'delete_location' location.id %}">Delete location</a>
+      </div>
+    {% endif %}
 
 {% endblock content %}
