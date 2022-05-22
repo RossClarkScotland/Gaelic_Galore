@@ -1,6 +1,8 @@
+from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Course
 from django.db.models import Q
+from .forms import CourseForm
 
 # Create your views here.
 class CourseListView(ListView):
@@ -58,4 +60,15 @@ class BeginnerListView(ListView):
 
     def get_queryset(self):
         return Course.objects.all().filter(level='Beginner')
+
+
+def add_course(request):
+# adds a course to the site
+    form = CourseForm()
+    template = 'courses/add_course.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
 
