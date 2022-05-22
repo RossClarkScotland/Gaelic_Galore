@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
 from django.views.generic import ListView, DetailView
 from .models import Course
 from django.db.models import Q
@@ -63,8 +64,18 @@ class BeginnerListView(ListView):
 
 
 def add_course(request):
-# adds a course to the site
-    form = CourseForm()
+# adds course to the site
+    if request.method == 'POST':
+        form = CourseForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Sgonneil! New course added!')
+            return redirect(reverse('add_course'))
+        else:
+            messages.error(request, 'Tha sinn duilich! Failed to add course.')
+    else:
+        form = CourseForm()
+        
     template = 'courses/add_course.html'
     context = {
         'form': form,

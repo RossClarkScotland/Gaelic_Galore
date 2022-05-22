@@ -35,6 +35,20 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
+          {% if user.is_authenticated %}
+            {% if user.is_superuser %}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Add content
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{% url 'add_course' %}">Add course</a>
+                  <a class="dropdown-item" href="{% url 'add_location' %}">Add locaiton</a>
+                </div>
+              </li>
+            {% endif %}
+          {% endif %}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

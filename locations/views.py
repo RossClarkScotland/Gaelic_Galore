@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
 from django.views.generic import ListView, DetailView
 from .models import Location
 from .forms import LocationForm
@@ -17,8 +18,18 @@ class LocationDetailView(DetailView):
     template_name = 'locations/location_detail.html'
 
 def add_location(request):
-# adds a location to the site
-    form = LocationForm()
+# adds location to the site
+    if request.method == 'POST':
+        form = LocationForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Sgonneil! New location added!')
+            return redirect(reverse('add_location'))
+        else:
+            messages.error(request, 'Tha sinn duilich! Failed to add location.')
+    else:
+        form = LocationForm()
+        
     template = 'locations/add_location.html'
     context = {
         'form': form,
