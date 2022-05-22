@@ -6,5 +6,6 @@ urlpatterns = [
     path('', LocationListView.as_view(), name='location_list'),
     path('<int:pk>/', LocationDetailView.as_view(), name='location_detail'),
     path('add/', views.add_location, name='add_location'),
+    path('edit/<int:location_id>/', views.edit_location, name='edit_location'),
     
 ]
