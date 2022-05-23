@@ -6,6 +6,8 @@ class Location(models.Model):
     description_place = models.TextField()
     description_accomodation = models.TextField()
     image = models.ImageField(null=True, blank=True)
+    image2 = models.ImageField(null=True, blank=True)
+    image3 = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.name
