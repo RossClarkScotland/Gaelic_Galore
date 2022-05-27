@@ -7,6 +7,22 @@ h2 {
     width: 100%;
 }
 
+/* landing page image */
+#hero-image {
+
+    background-image: url("/images/landing.jpg");
+
+    background-image: url("/images/landing.jpg");
+
+    background-image: url("/images/landing.jpg");
+    width: 100vw;
+    height: 100vh;
+    background-size: 100% 100%;
+    
+}
+
+
+
 /* cart +/- btns */
 
 .update-link,

@@ -4,14 +4,10 @@
 <title>{% block title %}Gaelic Galore{% endblock title %}</title>
 
 {% block content %}
-  <h1 class="display-4 text-success">Homepage</h1>>
-  <img src="{% static 'images/Skye.jpg' %}" alt="Skye">
-  {% if user.is_authenticated %}
-    <h4>Hi {{ user.email }}</h4>
-  {% else %}
-    <h4>You are not logged in.</h4>
-    <a href="#">Log in</a>
-    <a href="#">Register</a>
-  {% endif %}
-  <img src="#" alt="#">
+<div id="hero-image">
+  <div id="hero-text-box">
+      <h1 id="landing-head">Gaelic Galore</h1> 
+      <h5 id="landing-sub">Start your learning journey today!</h5>
+  </div>
+</div>
 {% endblock content %}
