@@ -8,11 +8,18 @@ h2 {
 }
 
 /* landing page */
+
 #landing-image {
+
+    background-image:-o-linear-gradient(rgb(7, 7, 7), rgba(75, 73, 73, 0.3)), url("{% static 'images/landing.jpg' %}");
+
+    background-image:-webkit-gradient(linear, left top, left bottom, from(rgb(7, 7, 7)), to(rgba(75, 73, 73, 0.3))), url("{% static 'images/landing.jpg' %}");
+
+    background-image:linear-gradient(rgb(7, 7, 7), rgba(75, 73, 73, 0.3)), url("{% static 'images/landing.jpg' %}");
     width: 100vw;
     height: 100vh;
     background-size: 100% 100%;
-   
+    
 }
 
 #landing-text {
