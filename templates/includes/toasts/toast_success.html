@@ -18,7 +18,7 @@
         </div>
         {% if not on_profile_page %}
             <p class="logo-font bg-white text-black py-1 text-uppercase"><strong>Your cart total: {{ total }}</p>
-/workspace/Gaelic_Galore/cart/migrations            <div class="bag-notification-wrapper">
+            <div class="bag-notification-wrapper">
                 {% if item in cart_items %}
                     {% for item in cart_items %}
                         <div>
@@ -30,7 +30,6 @@
                         </div>
                     {% endfor %}
                 {% endif %}
-
             </div>
             {% if item in cart_items %}
                 <div class="row">
