@@ -7,19 +7,28 @@ h2 {
     width: 100%;
 }
 
-/* landing page image */
-#hero-image {
-
-    background-image: url("/images/landing.jpg");
-
-    background-image: url("/images/landing.jpg");
-
-    background-image: url("/images/landing.jpg");
+/* landing page */
+#landing-image {
     width: 100vw;
     height: 100vh;
     background-size: 100% 100%;
-    
+   
 }
+
+#landing-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    color: #fafafa;
+    text-align: center;
+    font-family: 'Lato', 'Times', Arial;
+    font-weight: bold;
+    border-radius: 1rem;
+    padding: 0.7rem;
+    border: 2px solid white;
 
 
 
