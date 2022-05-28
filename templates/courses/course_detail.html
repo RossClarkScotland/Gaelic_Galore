@@ -3,73 +3,73 @@
 {% block title %}{{ course.title }}{% endblock title %}
 
 {% block content %}
-
-    <div>
-      <h2><a href="{% url 'course_detail' course.pk %}">{{ course.title }}</a></h2>
-      {% if course.image %}
-        <img src="{{ course.image.url }}" alt="{{ course.title }}">
-      {% endif %}
-      <p>{{ course.location }}</p>
-      <p>{{ course.level }}</p>
-      <p>{{ course.date }}</p>
-      <p>{{ course.price }}</p>
-    </div>
-    {% if request.user.is_superuser %}
-        <div>
-            <a class="btn btn-lg btn-info" href="{% url 'edit_course' course.id %}">Edit course</a> | 
-            <a class="btn btn-lg btn-warning" href="{% url 'delete_course' course.id %}">Delete course</a>
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            {% if course.image %}
+                <img class="detail-img mt-5" src="{{ course.image.url }}" alt="{{ course.title }}">
+            {% endif %}
         </div>
-    {% endif %}
+        <div class="col-sm-12 col-md-6 mt-5">
+            <h2 class="mb-4 text-center"><a href="{% url 'course_detail' course.pk %}">{{ course.title }}</a></h2>
+        <div class="detail-text text-center">
+            <p class="mb-2"><strong>Location:</strong> {{ course.location }}</p>
+            <p class="mb-2"><strong>Level:</strong> {{ course.level }}</p>
+            <p class="mb-2"><strong>Dates:</strong> {{ course.date }}</p>
+            <p class="mb-3"><strong>Price:</strong> £{{ course.price }}</p>
+        </div>
+
+        {% if request.user.is_superuser %}
+            <div class="mb-4 text-center">
+                <a class="btn btn-lg btn-warning btn-action font-weight-bold mr-1" href="{% url 'edit_course' course.id %}">Edit course</a>  
+                <a class="btn btn-lg btn-danger btn-action font-weight-bold ml-1 " href="{% url 'delete_course' course.id %}">Delete course</a>
+            </div>
+        {% endif %}
 
 
-    <form class="form" action="{% url 'add_cart_item' course.id %}" method="POST">
-      {% csrf_token %}
-      <div class="form-row">
-          <div class="col-12">
-              <p class="mt-1"><strong>Quantity:</strong></p>
-              <div class="form-group w-25">
-                  <div class="input-group input-group-{{ course.id }}">
-                    <div class="input-group-prepend">
-                        <button class="decrease-qty btn decrease-qty_{{ course.id }}"
-                            data-item_id="{{ course.id }}">
-                            <span class="icon">
-                                <i class="fas fa-minus"></i>
-                            </span>
-                        </button>
-                    </div>
-                    <input class="form-control qty_input" type="number" 
-                    name="qty" value="1" min="1" max="15" 
-                    data-item_id="{{ course.id }}" 
-                    id="id_qty_{{ course.id }}">
-                    <div class="input-group-append">
-                        <button class="increase-qty btn"
-                            data-item_id="{{ course.id }}" id="increase-qty_{{ course.id }}">
-                            <span class="icon">
-                                <i class="fas fa-plus"></i>
-                            </span>
-                        </button>
+            <form class="form" action="{% url 'add_cart_item' course.id %}" method="POST">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="col-12">
+                    <p class="mt-1"><strong>Quantity:</strong></p>
+                    <div class="form-group w-25">
+                        <div class="input-group input-group-{{ course.id }}">
+                            <div class="input-group-prepend">
+                                <button class="decrease-qty btn decrease-qty_{{ course.id }}"
+                                    data-item_id="{{ course.id }}">
+                                    <span class="icon">
+                                        <i class="fas fa-minus"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <input class="form-control qty_input" type="number" 
+                            name="qty" value="1" min="1" max="15" 
+                            data-item_id="{{ course.id }}" 
+                            id="id_qty_{{ course.id }}">
+                            <div class="input-group-append">
+                                <button class="increase-qty btn"
+                                    data-item_id="{{ course.id }}" id="increase-qty_{{ course.id }}">
+                                    <span class="icon">
+                                        <i class="fas fa-plus"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <!--Increase/Decrease qty btns logic based on Boutique Ado walkthrough-->
+
+            <div class="row mb-4">
+                <input type="submit" 
+                    class="col-8 offset-2 btn btn-action btn-primary text-uppercase fa fa-shopping-cart text-center" 
+                    aria-hidden="true" 
+                    value="Add to cart">
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            </div>
+        </form>
         </div>
     </div>
-
-    <!--Increase/Decrease qty btns logic based on Boutique Ado walkthrough-->
-
-    <div>
-        <input type="submit" 
-            class="btn btn-lg btn-success text-uppercase fa fa-shopping-cart" 
-            aria-hidden="true" 
-            value="Add course to cart">
-        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-    </div>
-</form>
-
-<div class="col-12">
-    <a href="{% url 'course_list' %}" class="btn btn-lg btn-outline-primary mt-5">
-        <span class="text-uppercase">Continue shopping</span>
-    </a>
-</div>
 
 {% endblock content %}
 

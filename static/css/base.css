@@ -4,8 +4,8 @@ html {
 
 body {
     height: 100%;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
   }
 
 p {
@@ -65,7 +65,15 @@ p {
     border-radius: 1rem;
 }
 
+/**** Course and Location detail pages ****/
+.detail-text {
+    font-size: 1.5rem;
+}
 
+.detail-img {
+    width: 100%;
+    height: auto;
+}
 
 /* cart +/- btns */
 
