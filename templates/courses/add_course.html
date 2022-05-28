@@ -5,10 +5,14 @@
 {% block content %}
     <div class="row">
         <div class="col-8 offset-2">
-            <hr>
-            <h2 class="text-center">Add course</h2>
-            <hr>
+            <br>
+            <h2 class="text-center text-uppercase mt-5">Add a new course</h2>
+            <br>
         </div>
+    </div>
+
+    <div class="text-center">
+        <a class="btn btn-danger btn-action font-weight-bold mb-5 mt-4" href="{% url 'course_list' %}">Cancel</a>
     </div>
 
     <div class="row">
@@ -16,9 +20,8 @@
             <form method="POST" action="{% url 'add_course' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
-                <div class="text-right">
-                    <a class="btn btn-dark btn-lg" href="{% url 'course_list' %}">Cancel</a>
-                    <button class="btn-primary btn-lg" type="submit">Add course</button>
+                <div class="text-center">
+                    <button class="btn-primary btn-action rounded font-weight-bold mt-3" type="submit">Add course</button>
                 </div>
             </form>
         </div>            

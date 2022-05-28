@@ -18,6 +18,12 @@ p {
     font-size: 2.5rem;
 }
 
+.btn-action {
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.2rem;
+}
+
 .card-wide {
     width: 100%;
 }
@@ -26,31 +32,30 @@ p {
 
 
 #landing-image {
-    width: 100vw; 
+    background-image:-o-linear-gradient(rgb(134, 127, 127), rgba(120, 115, 115, 0.3)), url("../images/landing.jpg");
+    background-image:-webkit-gradient(linear, left top, left bottom, from(rgb(72, 69, 69)), to(rgba(75, 73, 73, 0.3))), url("../images/landing.jpg");
+    background-image:linear-gradient(rgb(7, 7, 7), rgba(141, 131, 131, 0.3)), url("../images/landing.jpg");
+    width: 100vw;
     height: 100vh;
+    background-size: 100% 100%;
+
 }
 
-/* Container holding the image and the text */
-.container {
-    position: relative;
-    text-align: center;
-    color: white;
-  }
-
-  
   
   /* landing page text */
-  #landing-head {
+  #landing-text {
     position: absolute;
-    top: 8px;
-    left: 16px;
-  }
-
-  #landing-sub {
-    position: absolute;
-    top: 15px;
-    left: 16px;
-  }
+    top: 20%;
+    left: 10%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    color: #fafafa;
+    text-align: center;
+    font-family: 'Lato', 'Times', Arial;
+    font-weight: bold;
+    border-radius: 1rem;
+}
 
 
 
