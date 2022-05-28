@@ -4,8 +4,9 @@
 <title>{% block title %}Gaelic Galore{% endblock title %}</title>
 
 {% block content %}
-<div class="landing-text-box">
-  <h1 id="landing-head">Gaelic Galore</h1> 
-  <h4 id="landing-sub">Start your learning journey today!</h4>
+<div class="container">
+  <img id="landing-image" src="{% static 'images/landing.jpg' %}" alt="Callanish Standing Stones">
+  <div id="landing-head">Gaelic Galore</div> 
+  <div id="landing-sub">Start your learning journey today!</div>
 </div>
 {% endblock content %}
