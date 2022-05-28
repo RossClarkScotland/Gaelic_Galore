@@ -5,10 +5,8 @@
 {% block content %}
 
   <div class="row">
-    <div class="col-8 offset-2">
-        <br>
-        <h2 class="text-center text-uppercase mt-5">All our courses</h2>
-        <br>
+    <div class="col-8 offset-2 page-heading mt-5"> 
+        <h2 class="text-center text-uppercase mt-4 mb-4">All our courses</h2>
     </div>
   </div>
 
@@ -21,11 +19,11 @@
                 <img class="card-img-top" src="{{ course.image.url }}" alt="Course image cap">
               {% endif %}
               <div class="card-body">
-                <h5 class="card-title text-primary">{{ course.title }}</h5>
+                <h5 class="card-title text-primary list-text-box">{{ course.title }}</h5>
                 <hr>
-                <p class="card-text font-weight-bold">Level: {{ course.level }}</p>
+                <p class="card-text font-weight-bold list-text-box">Level: {{ course.level }}</p>
                 <hr>
-                <p class="card-text font-weight-bold">Location: {{ course.location }}</p>
+                <p class="card-text font-weight-bold list-text-box">Location: {{ course.location }}</p>
                 <hr>
                 <a href="{{ course.get_absolute_url }}" class="btn btn-primary btn-action rounded">more</a>
               </div>

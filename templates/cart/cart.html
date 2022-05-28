@@ -5,8 +5,8 @@
 
 {% if cart_items %}
   <div class="row">
-    <div class="col-md-12 text-center mt-3 mb-3">
-      <h1>Your shopping cart</h1>
+    <div class="col-md-12 text-center page-heading mt-5 mb-5">
+      <h1 class="mt-4 mb-4">Your shopping cart</h1>
     </div>
   </div>
   {% for item in cart_items %}
@@ -14,7 +14,8 @@
       <div class="col-md-6">
           <div class="card card-wide">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item text-center text-uppercase">Course: {{ item.course.title }} </li>
+              <li class="list-group-item text-center list-group-item-primary text-uppercase">
+                <strong>Course: {{ item.course.title }}</strong></li>
               <li class="list-group-item">Level: {{ item.course.level }} </li>
               <li class="list-group-item">Price: {{ item.course.price }} </li>
             </ul>
@@ -50,8 +51,8 @@
           </div>
         </div>
         </form>
-        <a class="update-link text-info"><small>Update</small></a>
-        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+        <a class="update-link text-info btn btn-outline-info text-uppercase"><small>Update</small></a>
+        <a class="remove-item text-danger float-right btn btn-outline-danger text-uppercase" id="remove_{{ item.item_id }}"><small>Remove</small></a>
       </div>
     </div>
     {% endfor %}
@@ -73,7 +74,7 @@
       <h1 class="col-md-12 text-center mt-5">Mo chreach! Your cart is empty.</h1>
     </div>
     <div class="col-md-12 text-center mb-5 mt-1">
-      <a class="btn btn-primary btn-lg"href="{% url 'course_list' %}">Continue shopping</a>
+      <a class="btn btn-primary btn-" href="{% url 'course_list' %}">Continue shopping</a>
     </div>
 {% endif %}
 

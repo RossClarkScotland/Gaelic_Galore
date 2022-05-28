@@ -18,15 +18,16 @@ p {
     font-size: 2.5rem;
 }
 
+.page-heading {
+    border: 1.75px solid black;
+}
+
 .btn-action {
     width: 10rem;
     height: 3rem;
     font-size: 1.2rem;
 }
 
-.card {
-    width: 18rem;
-}
 
 .card-img-top {
     height: 12rem;
@@ -34,6 +35,7 @@ p {
 
 .card-wide {
     width: 100%;
+    height: auto;
 }
 
 /* landing page */
@@ -73,6 +75,11 @@ p {
 .detail-img {
     width: 100%;
     height: auto;
+}
+
+.list-text-box {
+    height: 2rem; 
+
 }
 
 /* cart +/- btns */

@@ -19,30 +19,26 @@
         {% if not on_profile_page %}
             <p class="logo-font bg-white text-black py-1 text-uppercase"><strong>Your cart total: {{ total }}</p>
             <div class="bag-notification-wrapper">
-                {% if item in cart_items %}
-                    {% for item in cart_items %}
-                        <div>
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-success"><strong>Course: {{ item.course.title }}</strong></li>
-                                <li class="list-group-item">Price: {{ item.course.price }} </li>
-                                <li class="list-group-item">Qty: {{ item.qty }}</li>
-                            </ul>
-                        </div>
-                    {% endfor %}
-                {% endif %}
+                {% for item in cart_items %}
+                    <div>
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-primary"><strong>Course: {{ item.course.title }}</strong></li>
+                            <li class="list-group-item">Price: {{ item.course.price }} </li>
+                            <li class="list-group-item">Qty: {{ item.qty }}</li>
+                        </ul>
+                    </div>
+                {% endfor %}
             </div>
-            {% if item in cart_items %}
-                <div class="row">
-                    <div class="col">
-                        <a class="btn btn-dark d-flex justify-content-center" href="{% url 'checkout' %}">
-                            <span class="text-uppercase text-center">Go To Secure Checkout</span>
-                            <span class="icon">
-                                <i class="fas fa-lock"></i>
-                            </span>
-                        </a>
-                    </div>        
-                </div>
-            {% endif %}
-        {% endif %}
-    </div>
+            <div class="row">
+                <div class="col">
+                    <a class="btn btn-dark d-flex justify-content-center" href="{% url 'checkout' %}">
+                        <span class="text-uppercase text-center">Go To Secure Checkout</span>
+                        <span class="icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </a>
+                </div>        
+            </div>
+        </div>
+    {% endif %}
 </div>
