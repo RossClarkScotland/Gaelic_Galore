@@ -5,6 +5,7 @@ class Location(models.Model):
     name = models.CharField(max_length=100)
     description_place = models.TextField()
     description_accomodation = models.TextField()
+    closing_remarks = models.TextField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     image2 = models.ImageField(null=True, blank=True)
     image3 = models.ImageField(null=True, blank=True)

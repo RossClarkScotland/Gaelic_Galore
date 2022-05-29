@@ -4,19 +4,54 @@
 
 {% block content %}
 
-    <div>
-      <h2><a href="{% url 'location_detail' location.pk %}">{{ location.name }}</a></h2>
-      {% if location.image %}
-        <img src="{{ location.image.url }}" alt="{{ location.name }}">
-      {% endif %}
-      <p>{{ location.description_place }}</p>
-      <p>{{ location.description_accomodation }}</p>
+  <div class="row">
+    <div class="col-8 offset-2 page-heading mt-5 mb-4">
+        <h2 class="text-center text-uppercase mt-4 mb-4">{{ location.name }}</h2>
     </div>
-    {% if request.user.is_superuser %}
-      <div>
-          <a class="btn btn-lg btn-info" href="{% url 'edit_location' location.id %}">Edit location</a> | 
-          <a class="btn btn-lg btn-warning" href="{% url 'delete_location' location.id %}">Delete location</a>
-      </div>
-    {% endif %}
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6 mt-3">
+      {% if location.image %}
+        <img class="detail-location-img" src="{{ location.image.url }}" alt="{{ location.name }}">
+      {% endif %}
+    </div>
+    <div class="col-sm-12 col-md-6 mt-3">
+      <p class="mt-3">{{ location.description_place }}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 mt-3">
+      {% if location.image2 %}
+        <img class="detail-img" src="{{ location.image2.url }}" alt="{{ location.name }}">
+      {% endif %}
+    </div>
+    <div class="col-12 mt-3">
+      <p class="mt-3">{{ location.description_accomodation }}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6 mt-3">
+      {% if location.image3 %}
+        <img class="detail-location-img" src="{{ location.image3.url }}" alt="{{ location.name }}">
+      {% endif %}
+    </div>
+    <div class="col-sm-12 col-md-6 mt-3">
+      <p class="mt-3">{{ location.closing_remarks }}</p>
+    </div>
+  </div>
+
+  {% if request.user.is_superuser %}
+    <div class="mb-5 mt-5 text-center">
+        <a class="btn btn-lg btn-warning btn-action font-weight-bold mr-1 mb-5" href="{% url 'edit_location' location.id %}">Edit location</a>  
+        <a class="btn btn-lg btn-danger btn-action font-weight-bold ml-1 mb-5" href="{% url 'delete_location' location.id %}">Delete</a>
+    </div>
+  {% endif %}
+
+
+
 
 {% endblock content %}
+
