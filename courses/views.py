@@ -31,8 +31,10 @@ class SearchResultsListView(ListView):
             Q(location__name__icontains=query) |
             Q(location__description_place__icontains=query) |
             Q(location__description_accomodation__icontains=query) |
+            Q(location__closing_remarks__icontains=query) |
             Q(title__icontains=query)    |
-            Q(level__icontains=query)
+            Q(level__icontains=query)   |
+            Q(course_description__icontains=query)
         )
     """ Note from the above the different syntax required when
     searching on a foreign key!!!!"""

@@ -3,14 +3,32 @@
 {% block title %}Search{% endblock title %}
 
 {% block content %}
-  <h1>Your search results</h1>
-  {% for course in course_list %}
-    <div>
-      <h2><a href="{{ course.get_absolute_url }}">{{ course.title }}</a></h2>
-      <p>{{ course.level }}</p>
-      <p>{{ course.location }}</p>
-      <p>{{ course.price }}</p>
+  <div class="row">
+    <div class="col-12 text-center mt-4">
+      <h1>Your search results:</h1>
     </div>
-  {% endfor %}
+  </div>
+  <div class="container">
+    <div class="row">
+      {% for course in course_list %}
+          <div class="col-sm-12 col-md-4">
+            <div class="card text-center text-uppercase mt-5">
+              {% if course.image %}
+                <img class="card-img-top" src="{{ course.image.url }}" alt="Course image cap">
+              {% endif %}
+              <div class="card-body">
+                <h5 class="card-title text-primary list-text-box">{{ course.title }}</h5>
+                <hr>
+                <p class="card-text font-weight-bold list-text-box">Level: {{ course.level }}</p>
+                <hr>
+                <p class="card-text font-weight-bold list-text-box">Location: {{ course.location }}</p>
+                <hr>
+                <a href="{{ course.get_absolute_url }}" class="btn btn-primary btn-action rounded">more</a>
+              </div>
+            </div>
+          </div>
+      {% endfor %}
+    </div>
+  </div>
 
 {% endblock content %}

@@ -57,15 +57,20 @@
     </div>
     {% endfor %}
 
-
-      <div class="col-md-12 text-center mt-1 mb-1">
-          <h2 class="text-center">Your order total:</h2>
-          <h3 class="text-center"> £{{ total }}</h3>
+      <div class="row">
+        <div class="col-md-12 text-center mt-4 mb-1">
+            <h2 class="text-center">Your order total:</h2>
+            <h3 class="text-center"> £{{ total }}</h3>
+        </div>
       </div>
 
-      <div class="col-md-12 text-center mb-5 mt-1">
-          <a class="btn btn-primary btn-lg mr-1" href="{% url 'checkout' %}">GO TO CHECKOUT</a>
-          <a class="btn btn-outline-primary btn-lg ml-1"href="{% url 'course_list' %}">Continue shopping</a>
+      <div class="row">
+        <div class="col-md-6 text-center mt-1">
+            <a class="btn btn-primary btn-lg btn-action mr-1 mb-1 text uppercase" href="{% url 'checkout' %}">CHECKOUT</a>
+        </div>
+        <div class="col-md-6 text-center mt-1">
+            <a class="btn btn-secondary btn-lg btn-action text-uppercase"href="{% url 'course_list' %}">shop on</a>
+        </div>
       </div>
   
 
@@ -74,7 +79,7 @@
       <h1 class="col-md-12 text-center mt-5">Mo chreach! Your cart is empty.</h1>
     </div>
     <div class="col-md-12 text-center mb-5 mt-1">
-      <a class="btn btn-primary btn-" href="{% url 'course_list' %}">Continue shopping</a>
+      <a class="btn btn-primary" href="{% url 'course_list' %}">Continue shopping</a>
     </div>
 {% endif %}
 
