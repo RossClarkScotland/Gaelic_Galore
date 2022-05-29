@@ -74,7 +74,7 @@ def edit_location(request, location_id):
 
 @login_required
 def delete_location(request, location_id):
-    # delete location store site
+    # delete location
     if not request.user.is_superuser:
         messages.error(request, 'Tha sinn duilich. This page is only for site admin.')
         return redirect(reverse('home'))

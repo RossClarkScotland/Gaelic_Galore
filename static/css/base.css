@@ -8,10 +8,36 @@ body {
     padding: 0;
   }
 
+  h1 {
+    font-size: 3rem;
+    font-family: 'Lato', 'Times', Arial;
+}
+
+h2 {
+    font-size:2.25rem;
+    font-family: 'Lato', 'Times', Arial;
+}
+
+h3 {
+    font-size: 3rem;
+    font-family: 'Lato', 'Times', Arial;
+}
+
+h4 {
+    font-size:2rem;
+    font-family: 'Lato', 'Times', Arial;
+}
+
+h5 {
+    font-size:1.5rem;
+    font-family: 'Lato', 'Times', Arial;
+}
+
 p {
     margin-top: 0;
     margin-bottom: 0rem;
     color: black;
+    font-family: 'Lato', 'Times', Arial;
 }
 
 .static-notes {
