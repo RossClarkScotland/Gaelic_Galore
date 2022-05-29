@@ -1,7 +1,3 @@
-html {
-    height: 100%;
-  }
-
 body {
     height: 100%;
     margin: 0;
@@ -64,25 +60,33 @@ p {
     height: auto;
 }
 
+/* site navy theme */
+.navy-theme {
+    background-color: #000080;
+}
+
+/*  navbar  */
+.navbar-brand {
+    border: 1px solid white;
+    padding: 5px;
+}
+
 /* landing page */
-
-
 #landing-image {
-    background-image:-o-linear-gradient(rgb(134, 127, 127), rgba(120, 115, 115, 0.3)), url("../images/landing.jpg");
-    background-image:-webkit-gradient(linear, left top, left bottom, from(rgb(72, 69, 69)), to(rgba(75, 73, 73, 0.3))), url("../images/landing.jpg");
-    background-image:linear-gradient(rgb(7, 7, 7), rgba(141, 131, 131, 0.3)), url("../images/landing.jpg");
+    background-image: url("../images/Portree.jpg");
+    background-image: url("../images/Portree.jpg");
+    background-image: url("../images/Portree.jpg");
     width: 100vw;
     height: 100vh;
     background-size: 100% 100%;
 
 }
-
   
-  /* landing page text */
+/* landing page text */
   #landing-text {
     position: absolute;
-    top: 20%;
-    left: 10%;
+    top: 36.5%;
+    left: 50%;
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
@@ -90,7 +94,10 @@ p {
     text-align: center;
     font-family: 'Lato', 'Times', Arial;
     font-weight: bold;
-    border-radius: 1rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    border: 2.5px solid white;
+    background-color: #000080;
 }
 
 /**** Course and Location detail pages ****/

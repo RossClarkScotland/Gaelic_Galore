@@ -23,12 +23,12 @@
     <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
 
-  <title>{% block title %}Gaelic Galore{% endblock title %}</title>
+<title>{% block title %}Gaelic Galore{% endblock title %}</title>
 </head>
 <body>
   <header>
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark navy-theme">
       <a class="navbar-brand" href="{% url 'home' %}">Gaelic Galore</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -39,19 +39,20 @@
           {% if user.is_authenticated %}
             {% if user.is_superuser %}
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" 
                 role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Add content
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{% url 'add_course' %}">Add course</a>
+                  <hr>
                   <a class="dropdown-item" href="{% url 'add_location' %}">Add location</a>
                 </div>
               </li>
             {% endif %}
           {% endif %}
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" 
             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Courses
             </a>
@@ -84,11 +85,11 @@
         </ul>
         <form class="form-inline my-2 my-lg-0" action="{% url 'search_results' %}" method="get">
           <input name="q" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+          <button class="btn btn-outline-light text-white my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
       <div class="nav-item">
-        <a class="nav-link fa fa-shopping-cart" aria-hidden="true" 
+        <a class="nav-link fa fa-shopping-cart text-white" aria-hidden="true" 
         href="{% url 'cart' %}"><span class="sr-only">(current)</span>{{ total }}</a>
       </div>
 </nav>
