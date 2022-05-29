@@ -5,7 +5,11 @@
 {% block content %}
   <div class="row">
     <div class="col-12 text-center mt-4">
-      <h1>Your search results:</h1>
+      {% if course_list|length > 0 %}
+        <h1>Your search results:</h1>
+      {% else %}
+        <h1>No results match your search.</h1>
+      {% endif %}
     </div>
   </div>
   <div class="container">
@@ -30,5 +34,6 @@
       {% endfor %}
     </div>
   </div>
+  
 
 {% endblock content %}
