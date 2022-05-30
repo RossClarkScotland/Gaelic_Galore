@@ -1,1 +1,1 @@
-web: gunicorn gaelic_galore.wsgi:application
+web: gunicorn gaelic-galore.wsgi:application
