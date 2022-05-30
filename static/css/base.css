@@ -73,9 +73,9 @@ p {
 
 /* landing page */
 #landing-image {
-    background-image: url("../images/Portree.jpg");
-    background-image: url("../images/Portree.jpg");
-    background-image: url("../images/Portree.jpg");
+    background-image: url("../images/SunsetNarrow.png");
+    background-image: url("../images/SunsetNarrow.png");
+    background-image: url("../images/SunsetNarrow.png");
     width: 100vw;
     height: 100vh;
     background-size: 100% 100%;
@@ -249,4 +249,21 @@ select option {
 select:invalid,
 select option[value=""] {
     color: #aab7c4 !important;
+}
+
+
+
+/****************** MEDIA QUERIES  ******************/
+
+/* landing page */
+
+@media only screen and (min-width: 1025px) {
+#landing-image {
+    background-image: url("../images/Portree.jpg");
+    background-image: url("../images/Portree.jpg");
+    background-image: url("../images/Portree.jpg");
+    width: 100vw;
+    height: 100vh;
+    background-size: 100% 100%;
+    }
 }
