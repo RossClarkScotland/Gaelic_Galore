@@ -15,7 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' 
 
 
 ALLOWED_HOSTS = ['gaelic-galore.herokuapp.com', 'localhost', '8000-rossclarksc-gaelicgalor-sz11v7d64e1.ws-eu45.gitpod.io']

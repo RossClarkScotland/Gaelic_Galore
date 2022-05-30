@@ -11,15 +11,15 @@
 
 {% block content %}
     <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <h2>Tapadh leat!</h2>
-            <p>Thank you for your Order!. You will receive an order confirmation at
-                 <strong>{{ order.email }}</strong>.</p>
+        <div class="col-md-6 offset-md-3 text-center">
+            <h2 class="page-heading mt-5">Tapadh leatsa!</h2>
+            <h4 class="mt-3 text-uppercase">Thank you for your Order!</h4>
+            <p>You will receive an order confirmation at <strong>{{ order.email }}</strong>.</p>
         </div>
     </div>
 
     {% if from_profile %}
-        <div class="col-md-12 text-center mb-5 mt-1">
+        <div class="col-md-12 text-center mb-5 mt-4">
             <a href="{% url 'profile' %}" class="btn btn-primary btn-lg">
                 <span class="icon mr-2">
                     <i class="fas fa-angle-left"></i>
@@ -28,7 +28,7 @@
             </a>
         </div>
     {% else %}
-        <div class="col-md-12 text-center mb-5 mt-1">
+        <div class="col-md-12 text-center mb-5 mt-4">
             <a class="btn btn-primary btn-lg" href="{% url 'course_list' %}">Continue shopping</a>
         </div>
     {% endif %}
