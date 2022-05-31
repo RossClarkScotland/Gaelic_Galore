@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     # 3rd party
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
     'crispy_forms',
     'storages',
 
@@ -65,7 +66,7 @@ AUTHENTICATION_BACKENDS = (
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 DEFAULT_FROM_EMAIL = 'gaelic@galore.com'
