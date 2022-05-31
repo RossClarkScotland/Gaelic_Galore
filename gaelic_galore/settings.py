@@ -71,7 +71,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 DEFAULT_FROM_EMAIL = 'gaelic@galore.com'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-if 'DEBUG' == True:
+if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'gaelic@galore.com'
 else:
