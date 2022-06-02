@@ -1,0 +1,11 @@
+Halo {{ order.full_name }}!
+
+Mòran taing for choosing to take the next step on your language learning journey with us!
+
+Your order number: {{ order.order_number }}
+
+
+Chì sinn thu a dh’ aithghearr! / See you soon!
+
+The Gaelic Galore team
+

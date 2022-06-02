@@ -1,4 +1,0 @@
-Halo {{ order.full_name }}!
-
-Mòran taing for choosing to take the next step on your language learning journey with us.
-Below you will find the details of your order.
