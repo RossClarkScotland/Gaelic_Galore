@@ -1,6 +1,6 @@
 Halo {{ order.full_name }}!
 
-Mòran taing for choosing to take the next step on your language learning journey with us!
+Mòran taing for taking the next step on your language learning journey with us!
 
 Your order number: {{ order.order_number }}
 
