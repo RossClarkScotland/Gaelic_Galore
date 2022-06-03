@@ -11,7 +11,7 @@
         </div>
         <div class="col-sm-12 col-md-6 mt-5">
             <h2 class="mb-4 text-center"><a href="{% url 'course_detail' course.pk %}">{{ course.title }}</a></h2>
-        <div class=" text-center">
+        <div class="detail-text text-left ml-3">
             <p class="mb-2"><strong>Location:</strong> {{ course.location }}</p>
             <p class="mb-2"><strong>Level:</strong> {{ course.level }}</p>
             <p class="mb-2"><strong>Dates:</strong> {{ course.date }}</p>
@@ -52,8 +52,8 @@
             {% csrf_token %}
             <div class="form-row">
                 <div class="col-12">
-                    <p class="mt-1"><strong>Quantity:</strong></p>
-                    <div class="form-group w-25">
+                    <p class="mt-2 mb-2 text-center text-uppercase"><strong>Quantity:</strong></p>
+                    <div class="form-group w-100">
                         <div class="input-group input-group-{{ course.id }}">
                             <div class="input-group-prepend">
                                 <button class="decrease-qty btn decrease-qty_{{ course.id }}"
