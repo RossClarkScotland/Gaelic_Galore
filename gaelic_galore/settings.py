@@ -19,7 +19,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 # DEBUG = True
 
-ALLOWED_HOSTS = ['gaelic-galore.herokuapp.com', 'localhost', '8000-rossclarksc-gaelicgalor-sz11v7d64e1.ws-eu45.gitpod.io']
+ALLOWED_HOSTS = ['gaelic-galore.herokuapp.com', 'localhost']
 
 
 # Application definition
