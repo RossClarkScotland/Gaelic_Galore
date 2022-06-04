@@ -16,7 +16,7 @@
                 <hr class="mt-1 mb-3">
             </div>
         </div>
-        {% if not on_profile_page %}
+        {% if total > 0 %}
             <p class="logo-font bg-white text-black py-1 text-uppercase"><strong>Cart total: {{ total }}</p>
             <div class="bag-notification-wrapper">
                 {% for item in cart_items %}
@@ -39,6 +39,6 @@
                     </a>
                 </div>        
             </div>
-        </div>
-    {% endif %}
+        {% endif %}
+    </div>
 </div>
