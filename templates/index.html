@@ -30,7 +30,7 @@
   <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark navy-theme">
-      <a class="navbar-brand" href="{% url 'home' %}">Gaelic Galore</a>
+      <a class="navbar-brand brand-md-to-lg" href="{% url 'home' %}">Gaelic Galore</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -89,6 +89,7 @@
           <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
+      <a class="navbar-brand brand-mobile" href="{% url 'home' %}">Gaelic Galore</a>
       <div class="nav-item">
         <a class="nav-link fa fa-shopping-cart text-white" aria-hidden="true" 
         href="{% url 'cart' %}"><span class="sr-only">(current)</span>{{ total }}</a>
@@ -126,7 +127,3 @@
   </div>
 </body>
 </html>
-
-
- 
- 

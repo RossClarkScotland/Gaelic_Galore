@@ -239,9 +239,26 @@ select option[value=""] {
 
 /****************** MEDIA QUERIES  ******************/
 
+/* navbar */
+@media only screen and (min-width: 280px) {
+.brand-md-to-lg {
+    display: none;
+    }
+}
+@media only screen and (min-width: 1000px) {
+.brand-mobile {
+    display: none;
+    }
+
+.brand-md-to-lg {
+    display: block;
+    }
+}
+
+
 /* landing page */
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 650px) {
 #landing-image {
     background-image: url("../images/Portree.jpg");
     background-image: url("../images/Portree.jpg");
@@ -251,3 +268,47 @@ select option[value=""] {
     background-size: 100% 100%;
     }
 }
+
+@media only screen and (min-width: 799px) {
+    #landing-image {
+        background-image: url("../images/Vatersay.jpg");
+        background-image: url("../images/Vatersay.jpg");
+        background-image: url("../images/Vatersay.jpg");
+        width: 100vw;
+        height: 100vh;
+        background-size: 100% 100%;
+        }
+    }
+
+@media only screen and (min-width: 844px) {
+    #landing-image {
+        background-image: url("../images/Portree.jpg");
+        background-image: url("../images/Portree.jpg");
+        background-image: url("../images/Portree.jpg");
+        width: 100vw;
+        height: 100vh;
+        background-size: 100% 100%;
+        }
+    }
+
+@media only screen and (min-width: 912px) {
+    #landing-image {
+        background-image: url("../images/Vatersay.jpg");
+        background-image: url("../images/Vatersay.jpg");
+        background-image: url("../images/Vatersay.jpg");
+        width: 100vw;
+        height: 100vh;
+        background-size: 100% 100%;
+        }
+}
+
+@media only screen and (min-width: 913px) {
+    #landing-image {
+        background-image: url("../images/Portree.jpg");
+        background-image: url("../images/Portree.jpg");
+        background-image: url("../images/Portree.jpg");
+        width: 100vw;
+        height: 100vh;
+        background-size: 100% 100%;
+        }
+    }
