@@ -73,32 +73,16 @@ p {
 
 /* landing page */
 #landing-image {
-    background-image: url("../images/SunsetNarrow.png");
-    background-image: url("../images/SunsetNarrow.png");
-    background-image: url("../images/SunsetNarrow.png");
+    background-image: url("../images/Vatersay.jpg");
+    background-image: url("../images/Vatersay.jpg");
+    background-image: url("../images/Vatersay.jpg");
     width: 100vw;
     height: 100vh;
     background-size: 100% 100%;
 
 }
   
-/* landing page text */
-  #landing-text {
-    position: absolute;
-    top: 36.5%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    color: #fafafa;
-    text-align: center;
-    font-family: 'Lato', 'Times', Arial;
-    font-weight: bold;
-    font-weight: bold;
-    padding: 0.5rem;
-    border: 2.5px solid white;
-    background-color: #000080;
-}
+
 
 /**** Course and Location detail pages ****/
 .detail-text {
