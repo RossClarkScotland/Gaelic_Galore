@@ -84,6 +84,12 @@ p {
 
 }
 
+/**** Course and location list pages ****/
+
+.int-header {
+    font-size: 1.8rem;
+}
+
 /**** Course and Location detail pages ****/
 .detail-text {
     font-size: 1.5rem;
@@ -312,3 +318,11 @@ select option[value=""] {
         background-size: 100% 100%;
         }
     }
+
+
+/**** Course and location list pages ****/
+@media only screen and (min-width: 540px) {
+    .int-header {
+        font-size: 2.25rem;
+    }
+}
