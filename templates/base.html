@@ -85,14 +85,20 @@
         </ul>
         <form class="form-inline my-2 my-lg-0" action="{% url 'search_results' %}" method="get">
           <input name="q" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-light text-white my-2 my-sm-0" type="submit">Search</button>
+          <button class="btn btn-outline-light text-white my-2 my-sm-0 mr-lg-4" type="submit">Search</button>
         </form>
       </div>
       <a class="navbar-brand brand-mobile" href="{% url 'home' %}">Gaelic Galore</a>
       <div class="nav-item">
-        <a class="nav-link fa fa-shopping-cart text-white" aria-hidden="true" 
-        href="{% url 'cart' %}"><span class="sr-only">(current)</span>{{ total }}</a>
-      </div>
+        <div>
+          <a class="nav-link fa fa-shopping-cart text-white mr-lg-3" aria-hidden="true" 
+          href="{% url 'cart' %}"></a>
+        </div>
+        {% if total %}
+        <div class="text-center text-white mr-lg-3">
+          <a class="text-white" href="{% url 'cart' %}"><span class="sr-only">(current)</span>{{ total }}</a>
+        </div>
+        {% endif %}
 </nav>
   </header>
   <div class="container">

@@ -81,8 +81,6 @@ p {
     background-size: 100% 100%;
 
 }
-  
-
 
 /**** Course and Location detail pages ****/
 .detail-text {
@@ -247,7 +245,7 @@ select option[value=""] {
 }
 @media only screen and (min-width: 1000px) {
 .brand-mobile {
-    display: none;
+    display: none
     }
 
 .brand-md-to-lg {
