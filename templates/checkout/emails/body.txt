@@ -4,6 +4,12 @@ Mòran taing for taking the next step on your language learning journey with us!
 
 Your order number: {{ order.order_number }}
 
+Order details:
+
+Course: {{ item.course.title }}
+date: {{ item.course.date }}       
+Price per person: {{ item.course.price }}
+Number of participants: {{ item.qty }}
 
 Chì sinn thu a dh’ aithghearr! / See you soon!
 
