@@ -75,14 +75,15 @@ p {
 
 /* landing page */
 #landing-image {
-    background-image: url("../images/Vatersay.jpg");
-    background-image: url("../images/Vatersay.jpg");
-    background-image: url("../images/Vatersay.jpg");
+    background-image: url("../images/Neist2.jpg");
+    background-image: url("../images/Neist2.jpg");
+    background-image: url("../images/Neist2.jpg");
     width: 100vw;
     height: 100vh;
     background-size: 100% 100%;
 
 }
+
 
 /**** Course and location list pages ****/
 
@@ -266,20 +267,31 @@ select option[value=""] {
 
 @media only screen and (min-width: 650px) {
 #landing-image {
-    background-image: url("../images/Portree.jpg");
-    background-image: url("../images/Portree.jpg");
-    background-image: url("../images/Portree.jpg");
+    background-image: url("../images/Neist2.jpg");
+    background-image: url("../images/Neist2.jpg");
+    background-image: url("../images/Neist2.jpg");
     width: 100vw;
     height: 100vh;
     background-size: 100% 100%;
     }
 }
 
-@media only screen and (min-width: 799px) {
+@media only screen and (min-width: 667px) {
     #landing-image {
-        background-image: url("../images/Vatersay.jpg");
-        background-image: url("../images/Vatersay.jpg");
-        background-image: url("../images/Vatersay.jpg");
+        background-image: url("../images/Portree.jpg");
+        background-image: url("../images/Portree.jpg");
+        background-image: url("../images/Portree.jpg");
+        width: 100vw;
+        height: 100vh;
+        background-size: 100% 100%;
+        }
+    }
+
+@media only screen and (min-width: 768px) {
+    #landing-image {
+        background-image: url("../images/Neist2.jpg");
+        background-image: url("../images/Neist2.jpg");
+        background-image: url("../images/Neist2.jpg");
         width: 100vw;
         height: 100vh;
         background-size: 100% 100%;
@@ -299,9 +311,9 @@ select option[value=""] {
 
 @media only screen and (min-width: 912px) {
     #landing-image {
-        background-image: url("../images/Vatersay.jpg");
-        background-image: url("../images/Vatersay.jpg");
-        background-image: url("../images/Vatersay.jpg");
+        background-image: url("../images/Neist2.jpg");
+        background-image: url("../images/Neist2.jpg");
+        background-image: url("../images/Neist2.jpg");
         width: 100vw;
         height: 100vh;
         background-size: 100% 100%;

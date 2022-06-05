@@ -27,82 +27,82 @@
 </head>
 <body>
   <div id="landing-image">
-  <header>
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark navy-theme">
-      <a class="navbar-brand brand-md-to-lg" href="{% url 'home' %}">Gaelic Galore</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark navy-theme">
+        <a class="navbar-brand brand-md-to-lg" href="{% url 'home' %}">Gaelic Galore</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          {% if user.is_authenticated %}
-            {% if user.is_superuser %}
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" 
-                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Add content
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{% url 'add_course' %}">Add course</a>
-                  <hr>
-                  <a class="dropdown-item" href="{% url 'add_location' %}">Add location</a>
-                </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            {% if user.is_authenticated %}
+              {% if user.is_superuser %}
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" 
+                  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Add content
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'add_course' %}">Add course</a>
+                    <hr>
+                    <a class="dropdown-item" href="{% url 'add_location' %}">Add location</a>
+                  </div>
+                </li>
+              {% endif %}
+            {% endif %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" 
+              role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Courses
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'course_list' %}">All Courses</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'beginner' %}">Beginner</a>
+                <a class="dropdown-item" href="{% url 'intermediate' %}">Intermediate</a>
+                <a class="dropdown-item" href="{% url 'advanced' %}">Advanced</a>
+              </div>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'location_list' %}">Locations<span class="sr-only">(current)</span></a>
+            </li>
+            {% if user.is_authenticated %}
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'account_logout' %}">Logout<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active mr-3">
+                <a class="nav-link" href="{% url 'profile' %}">Profile<span class="sr-only">(current)</span></a>
+              </li>
+            {% else %}
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'account_login' %}">Login<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active mr-3">
+                <a class="nav-link" href="{% url 'account_signup' %}">Register<span class="sr-only">(current)</span></a>
               </li>
             {% endif %}
-          {% endif %}
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" 
-            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Courses
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{% url 'course_list' %}">All Courses</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{% url 'beginner' %}">Beginner</a>
-              <a class="dropdown-item" href="{% url 'intermediate' %}">Intermediate</a>
-              <a class="dropdown-item" href="{% url 'advanced' %}">Advanced</a>
-            </div>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'location_list' %}">Locations<span class="sr-only">(current)</span></a>
-          </li>
-          {% if user.is_authenticated %}
-            <li class="nav-item active">
-              <a class="nav-link" href="{% url 'account_logout' %}">Logout<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active mr-3">
-              <a class="nav-link" href="{% url 'profile' %}">Profile<span class="sr-only">(current)</span></a>
-            </li>
-          {% else %}
-            <li class="nav-item active">
-              <a class="nav-link" href="{% url 'account_login' %}">Login<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active mr-3">
-              <a class="nav-link" href="{% url 'account_signup' %}">Register<span class="sr-only">(current)</span></a>
-            </li>
-          {% endif %}
-        </ul>
-        <form class="form-inline my-2 my-lg-0" action="{% url 'search_results' %}" method="get">
-          <input name="q" class="form-control text-white mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-light my-2 my-sm-0 mr-lg-4" type="submit">Search</button>
-        </form>
-      </div>
-        <a class="navbar-brand brand-mobile" href="{% url 'home' %}">Gaelic Galore</a>
-        <div class="nav-item">
-          <div>
-            <a class="nav-link fa fa-shopping-cart text-white mr-lg-3" aria-hidden="true" 
-            href="{% url 'cart' %}"></a>
-          </div>
-          {% if total %}
-          <div class="text-center text-white mr-lg-3">
-            <a class="text-white" href="{% url 'cart' %}"><span class="sr-only">(current)</span>{{ total }}</a>
-          </div>
-          {% endif %}
+          </ul>
+          <form class="form-inline my-2 my-lg-0" action="{% url 'search_results' %}" method="get">
+            <input name="q" class="form-control text-white mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0 mr-lg-4" type="submit">Search</button>
+          </form>
         </div>
-</nav>
-  </header>
+          <a class="navbar-brand brand-mobile" href="{% url 'home' %}">Gaelic Galore</a>
+          <div class="nav-item">
+            <div>
+              <a class="nav-link fa fa-shopping-cart text-white mr-lg-3" aria-hidden="true" 
+              href="{% url 'cart' %}"></a>
+            </div>
+            {% if total %}
+            <div class="text-center text-white mr-lg-3">
+              <a class="text-white" href="{% url 'cart' %}"><span class="sr-only">(current)</span>{{ total }}</a>
+            </div>
+            {% endif %}
+          </div>
+      </nav>
+    </header>
 </div>
 
   <div class="container">
