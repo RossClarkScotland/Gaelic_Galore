@@ -1,4 +1,4 @@
-    Halo a {{ order.full_name }}!
+Halo a {{ order.full_name }}!
 
 Mòran taing for taking the next step on your language learning journey with us!
 
