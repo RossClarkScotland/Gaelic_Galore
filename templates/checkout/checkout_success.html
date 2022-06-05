@@ -12,11 +12,35 @@
 {% block content %}
     <div class="row">
         <div class="col-md-6 offset-md-3 text-center">
-            <h2 class="page-heading mt-5">Tapadh leatsa!</h2>
-            <h4 class="mt-3 text-uppercase">Thank you for your Order!</h4>
+            <h2 class="page-heading mt-5 mb-4">Tapadh leatsa!</h2>
+            <h4 class="mt-3 text-uppercase text-primary">Thank you for your Order!</h4>
             <p>You will soon receive an order confirmation at <strong>{{ order.email }}</strong>.</p>
         </div>
     </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-6 offset-md-3 text-center">
+            <h4 class="text-uppercase">Order details:</h4>
+            {% for item in order.lineitems.all %}
+            <div class="row">
+                <div class="col-8 offset-2">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-primary"><strong>Course:<br>{{ item.course.title }}</strong></li>
+                        <li class="list-group-item"><strong>Price per person:<br></strong> {{ item.course.price }}</li>
+                        <li class="list-group-item"><strong>Number of participants:</strong> {{ item.qty }}</li>
+                        <li class="list-group-item"><strong>Course dates:</strong><br>{{ item.course.date }}</li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+
+      
+
+
 
     {% if from_profile %}
         <div class="col-md-12 text-center mb-5 mt-4">
