@@ -6,3 +6,7 @@ from django.views.generic import TemplateView
 class HomePageView(TemplateView):
 # renders the index/home page
     template_name = 'index.html'
+
+class ContactPageView(TemplateView):
+# renders the index/home page
+    template_name = 'contact.html'
