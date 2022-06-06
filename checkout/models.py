@@ -60,6 +60,3 @@ class OrderLineItem(models.Model):
 
         self.lineitem_total = self.course.price * self.qty
         super().save(*args, **kwargs)
-
-    def __str__(self):
-        return f'SKU {self.course.sku} on order {self.order.order_number}'
