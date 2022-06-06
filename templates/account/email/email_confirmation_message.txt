@@ -5,7 +5,7 @@
 {% blocktrans with site_name=current_site.name site_domain=current_site.domain %}
 Halo, a charaid!
 
-You're receiving this e-mail because user {{ user_display }} has given your e-mail address to register an account on
+You are receiving this e-mail because user {{ user_display }} has given your e-mail address to register an account on
 {{ site_domain }}.
 
 To confirm this is correct, go to {{ activate_url }}{% endblocktrans %}{% endautoescape %}{% endblock %}
