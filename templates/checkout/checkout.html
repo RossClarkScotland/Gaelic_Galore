@@ -1,27 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
 
-
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
-
 {% block content %}
 
-    <div class="row text-center">
+    <header class="row text-center">
         <div class="col-12 page-heading mt-5 mb-3">
             <h3 class="mt-4 mb-4 text uppercase">Checkout total: £{{ total }}</h3>
         </div>
-    </div>
+    </header>
 
     <h4 class="logo-font mt-4 mb-4 text-center col-6 offset-3">Your courses</h4>
         
     {% for item in cart_items %}
-    <div class="row">
+    <section class="row">
         <div class="col-6 offset-3">
             <div class="card card-wide mb-5">
                 <ul class="list-group list-group-flush">
@@ -34,7 +25,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </section>
     {% endfor %}
 
     <!--Complete order form-->

@@ -3,7 +3,7 @@
 {% block title %}Search{% endblock title %}
 
 {% block content %}
-  <div class="row">
+  <header class="row">
     <div class="col-12 text-center mt-4">
       {% if course_list|length > 0 %}
         <h1>Your search results:</h1>
@@ -11,8 +11,8 @@
         <h1>No results match your search.</h1>
       {% endif %}
     </div>
-  </div>
-  <div class="container">
+  </header>
+  <section class="container">
     <div class="row">
       {% for course in course_list %}
           <div class="col-sm-12 col-md-4">
@@ -33,7 +33,7 @@
           </div>
       {% endfor %}
     </div>
-  </div>
+  </section>
   
 
 {% endblock content %}

@@ -4,12 +4,13 @@
 
 {% block content %}
 
-    <div class="row text-center">
+    <header class="row text-center">
         <div class="col-12 page-heading mt-5 mb-3">
             <h3 class="mt-4 mb-4 text uppercase">{{ course.title }}</h3>
         </div>
-    </div>
-    <div class="row">
+    </header>
+
+    <section class="row">
         <div class="col-sm-12 col-md-6">
             {% if course.image %}
                 <img class="detail-img mt-5" src="{{ course.image.url }}" alt="{{ course.title }}">
@@ -97,10 +98,10 @@
             </div>
         </form>
         </div>
-    </div>
+    </section>
 
     <hr>
-    <div class="row">
+    <section class="row">
         <div class="col-sm-12 col-md-6 mb-1">
             <h4 class="text-center mb-3">Course description</h4>
             <p>{{ course.course_description }}</p>
@@ -110,7 +111,7 @@
                 <img class="detail-img mt-1 mb-5" src="{{ course.image2.url }}" alt="{{ course.title }}">
             {% endif %}
         </div>
-    </div>
+    </section>
 
 {% endblock content %}
 

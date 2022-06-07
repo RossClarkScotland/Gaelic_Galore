@@ -4,13 +4,13 @@
 
 {% block content %}
 
-  <div class="row">
+  <header class="row">
     <div class="col-8 offset-2 page-heading mt-5">
         <h2 class="text-center text-uppercase mt-4 mb-4 int-header">Our intermediate courses</h2>
     </div>
-  </div>
+  </header>
 
-  <div class="container">
+  <section class="container">
     <div class="row">
       {% for course in course_list %}
           <div class="col-sm-12 col-md-4">
@@ -31,6 +31,6 @@
           </div>
       {% endfor %}
     </div>
-  </div>
+  </section>
 
 {% endblock content %}
