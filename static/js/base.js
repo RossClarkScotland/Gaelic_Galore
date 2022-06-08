@@ -2,3 +2,4 @@
 
 type="text/javascript">
 $('.toast').toast('show');
+
