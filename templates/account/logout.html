@@ -7,10 +7,10 @@
     <header class="text-center text-primary text-uppercase mt-4">
         <h1>Log out</h1>
     </header>
-    <section class="text-center static-notes">
+    <div class="text-center static-notes">
         <p class="font-weight-bold">A bheil thu cinnteach gu bheil thu airson falbh?</p>
         <p>Are you sure you want to leave?</p>
-    </section>
+    </div>
     <form method="post" action="{% url 'account_logout' %}">
         {% csrf_token %}
         {{ form|crispy }}

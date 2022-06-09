@@ -10,7 +10,7 @@
         </div>
     </header>
 
-    <section class="row">
+    <div class="row">
         <div class="col-sm-12 col-md-6">
             {% if course.image %}
                 <img class="detail-img mt-5" src="{{ course.image.url }}" alt="{{ course.title }}">
@@ -98,10 +98,10 @@
             </div>
         </form>
         </div>
-    </section>
+    </div>
 
     <hr>
-    <section class="row">
+    <div class="row">
         <div class="col-sm-12 col-md-6 mb-1">
             <h4 class="text-center mb-3">Course description</h4>
             <p>{{ course.course_description }}</p>
@@ -111,7 +111,7 @@
                 <img class="detail-img mt-1 mb-5" src="{{ course.image2.url }}" alt="{{ course.title }}">
             {% endif %}
         </div>
-    </section>
+    </div>
 
 {% endblock content %}
 

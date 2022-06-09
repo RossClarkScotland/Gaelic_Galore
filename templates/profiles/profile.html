@@ -12,7 +12,7 @@
         </div>
     </header>
     <div class="row">
-        <section class="col-12 col-lg-6">
+        <div class="col-12 col-lg-6">
             <h4 class="mt-3 text-center text-primary">Order History</h4>
             {% for order in orders %}
                 <p><strong>Order number:</strong></p>
@@ -25,8 +25,8 @@
                 <hr>
                 
             {% endfor %}
-        </section>
-        <section class="col-12 col-lg-6">
+        </div>
+        <div class="col-12 col-lg-6">
             <h4 class="mt-3 text-center text-primary">Billing Info</h4>
             <p class="text-center">
                 Update your details by changing the information below.
@@ -38,6 +38,6 @@
                     <button class="btn btn-action btn-primary text-center text-uppercase mt-3 mb-4">Update Info</button>
                 </div>
             </form>
-        </section>
+        </div>
     </div>
 {% endblock %}

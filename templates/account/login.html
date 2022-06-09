@@ -7,10 +7,10 @@
 <header class="text-center text-primary text-uppercase mt-4">
     <h1>Log in</h1>
 </header>
-<section class="text-center static-notes">
+<div class="text-center static-notes">
   <p class="font-weight-bold">Fàilte air ais! Bidh e math d’ fhaicinn a-rithist.</p>
   <p>Welcome back! It will be nice to see you again.</p>
-</section>
+</div>
   <form method="post">
     {% csrf_token %}
     {{ form|crispy }}
