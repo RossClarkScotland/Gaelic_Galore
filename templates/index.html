@@ -39,12 +39,12 @@
           <ul class="navbar-nav ml-auto">
             {% if user.is_authenticated %}
               {% if user.is_superuser %}
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle text-white" href="#" id="indexNavbarDropdown" 
+                <li class="nav-item" dropdown>
+                  <a class="nav-link dropdown-toggle text-white" href="#" id="indexAddDropdown"
                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Add content
                   </a>
-                  <div class="dropdown-menu" aria-labelledby="indexNavbarDropdown">
+                  <div class="dropdown-menu" aria-labelledby="indexAddDropdown">
                     <a class="dropdown-item" href="{% url 'add_course' %}">Add course</a>
                     <hr>
                     <a class="dropdown-item" href="{% url 'add_location' %}">Add location</a>
@@ -53,11 +53,11 @@
               {% endif %}
             {% endif %}
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-white" href="#" 
+              <a class="nav-link dropdown-toggle text-white" href="#" id="indexCourseDropdown"
               role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Courses
               </a>
-              <div class="dropdown-menu" aria-labelledby="indexNavbarDropdown">
+              <div class="dropdown-menu" aria-labelledby="indexCourseDropdown">
                 <a class="dropdown-item" href="{% url 'course_list' %}">All Courses</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{% url 'beginner' %}">Beginner</a>
