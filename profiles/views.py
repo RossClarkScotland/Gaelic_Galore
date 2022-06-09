@@ -8,9 +8,11 @@ from checkout.models import Order
 # Create your views here.
 
 # logic learned from Boutique Ado walkthrough project
+
+
 @login_required()
 def profile(request):
-#Displays user profile
+    """ displays user profile """
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
@@ -36,6 +38,7 @@ def profile(request):
 
 
 def order_history(request, order_number):
+    """ shows previous orders"""
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (

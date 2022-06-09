@@ -10,14 +10,15 @@ import time
 
 # The logic here is that of the boutique Ado walkthrough project
 
+
 class StripeWH_Handler:
-# handles Stripe webhooks
+    """ handles Stripe webhooks """
 
     def __init__(self, request):
         self.request = request
 
     def _send_confirmation_email(self, order):
-        """Send the user a confirmation email"""
+        """send the user a confirmation email"""
         cust_email = order.email
         subject = render_to_string(
             'checkout/emails/subject.txt',
@@ -25,23 +26,22 @@ class StripeWH_Handler:
         body = render_to_string(
             'checkout/emails/body.txt',
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-        
         send_mail(
             subject,
             body,
             settings.DEFAULT_FROM_EMAIL,
             [cust_email]
-        )        
+        )
 
     def handle_event(self, event):
-    # handles generic/unexpected webhook events
+        """ handles generic/unexpected webhook events """
 
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
             status=200)
 
     def handle_payment_intent_succeeded(self, event):
-    # handles the payment_intent.succeeded webhook from Stripe
+        """ handles the payment_intent.succeeded webhook from Stripe """
 
         intent = event.data.object
         pid = intent.id
@@ -136,7 +136,7 @@ class StripeWH_Handler:
             status=200)
 
     def handle_payment_intent_payment_failed(self, event):
-    # handles the payment_intent.payment_failed webhook from Stripe
+        # handles the payment_intent.payment_failed webhook from Stripe
 
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',

@@ -3,7 +3,7 @@ from .models import Location
 
 
 class LocationForm(forms.ModelForm):
-# allows superusers to add new locations
+    """ allows superusers to add new locations """
     class Meta:
         model = Location
         fields = '__all__'

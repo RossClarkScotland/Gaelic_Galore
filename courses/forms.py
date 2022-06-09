@@ -3,7 +3,7 @@ from .models import Course
 
 
 class CourseForm(forms.ModelForm):
-# allows superusers to add new courses
+    # allows superusers to add new courses
     class Meta:
         model = Course
         fields = '__all__'

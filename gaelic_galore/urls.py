@@ -14,7 +14,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
 
     # favicon
-	 path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('images/favicon.ico'))),
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('images/favicon.ico'))),
 
 
     # my local apps

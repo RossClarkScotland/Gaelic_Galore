@@ -5,12 +5,14 @@ from .models import OrderLineItem
 
 # as shown in Boutique Ado walkthrough project
 
+
 @receiver(post_save, sender=OrderLineItem)
 def update_on_save(sender, instance, created, **kwargs):
-# updates order total upon lineitem update/create
+    """ updates order total upon lineitem update/create """
     instance.order.update_total()
+
 
 @receiver(post_delete, sender=OrderLineItem)
 def update_on_delete(sender, instance, **kwargs):
-# updates order total upon lineitem delete
+    """ updates order total upon lineitem delete """
     instance.order.update_total()

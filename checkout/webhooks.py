@@ -7,10 +7,11 @@ import stripe
 
 # The logic here is that of the boutique Ado walkthrough project
 
+
 @require_POST
 @csrf_exempt
 def webhook(request):
-# listens for Stripe webhooks
+    """ listens for Stripe webhooks """
     # set-up
     wh_secret = settings.STRIPE_WH_SECRET
     stripe.api_key = settings.STRIPE_SECRET_KEY

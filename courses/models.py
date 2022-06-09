@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from locations.models import Location
 
+
 class Course(models.Model):
     location = models.ForeignKey(Location, blank=True, null=True, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
@@ -16,5 +17,5 @@ class Course(models.Model):
         return self.title
 
     def get_absolute_url(self):
-    # establishes canonical url for the Course model
+        # establishes canonical url for the Course model
         return reverse('course_detail', args=[str(self.id)])

@@ -13,9 +13,10 @@ import json
 
 # logic structure learned from Boutique Ado walkthrough project
 
+
 @require_POST
 def cache_checkout_data(request):
-# determines whether user checked save data box in the form
+    """ determines whether user checked save data box in the form """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -30,6 +31,7 @@ def cache_checkout_data(request):
         messages.error(request, 'Tha sinn duilich! We cannot process \
             your payment. Please try again later.')
         return HttpResponse(content=e, status=400)
+
 
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -77,14 +79,13 @@ def checkout(request):
                     )
                     order.delete()
                     return redirect(reverse('cart'))
-            
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
 
         else:
             messages.error(request, 'Tha sinn duilich! There was a problem with your form. \
                 Please review your details.')
-    
+
     else:
         cart = request.session.get('cart', {})
 
@@ -101,7 +102,7 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-    # prefill form with user profile info
+        # prefill form with user profile info
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -135,9 +136,8 @@ def checkout(request):
     return render(request, template, context)
 
 
-
 def checkout_success(request, order_number):
-# handles successful checkouts
+    # handles successful checkouts
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
 

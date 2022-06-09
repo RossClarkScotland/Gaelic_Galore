@@ -3,6 +3,7 @@ from .models import Order
 
 # The logic here is that of the boutique Ado walkthrough project
 
+
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
@@ -12,7 +13,8 @@ class OrderForm(forms.ModelForm):
                   'county',)
 
     def __init__(self, *args, **kwargs):
-    # adds placeholders and classes, removes auto-generated labels, set autofocus on 1st field
+        """ adds placeholders and classes, removes auto-generated labels,
+        set autofocus on 1st field"""
 
         super().__init__(*args, **kwargs)
         placeholders = {

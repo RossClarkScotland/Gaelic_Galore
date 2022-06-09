@@ -1,18 +1,17 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import redirect, reverse, HttpResponse, get_object_or_404
 from django.views.generic import TemplateView
 from django.contrib import messages
 from courses.models import Course
 
 # Create your views here.
 class CartView(TemplateView):
-# renders the shopping cart page
+    """renders the shopping cart page"""
     template_name = 'cart/cart.html'
 
 
-
 def add_cart_item(request, item_id):
-# adds item to cart
-# logic pattern learned from Boutique Ado walktrhrough project
+    """adds item to cart"""
+    # logic pattern learned from Boutique Ado walktrhrough project
     course = get_object_or_404(Course, pk=item_id)
     qty = int(request.POST.get('qty'))
     redirect_url = request.POST.get('redirect_url')
@@ -31,8 +30,8 @@ def add_cart_item(request, item_id):
  
 
 def adjust_cart_item_qty(request, item_id):
-# changes number of items in the cart
-# logic pattern learned from Boutique Ado walktrhrough project
+    """changes number of items in the cart
+       logic pattern learned from Boutique Ado walktrhrough project"""
     course = get_object_or_404(Course, pk=item_id)
     qty = int(request.POST.get('qty'))
     cart = request.session.get('cart', {})
@@ -49,8 +48,8 @@ def adjust_cart_item_qty(request, item_id):
 
 
 def remove_cart_item(request, item_id):
-# removes items from the cart
-# logic pattern learned from Boutique Ado walktrhrough project
+    """ removes items from the cart
+     logic pattern learned from Boutique Ado walktrhrough project"""
 
     try:
         course = get_object_or_404(Course, pk=item_id)

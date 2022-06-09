@@ -39,12 +39,12 @@
           <ul class="navbar-nav ml-auto">
             {% if user.is_authenticated %}
               {% if user.is_superuser %}
-                <li class="nav-item" dropdown>
-                  <a class="nav-link dropdown-toggle text-white" href="#" id="indexAddDropdown"
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-white" href="#" id="IndexAddDropdown" 
                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Add content
                   </a>
-                  <div class="dropdown-menu" aria-labelledby="indexAddDropdown">
+                  <div class="dropdown-menu" aria-labelledby="IndexAddDropdown">
                     <a class="dropdown-item" href="{% url 'add_course' %}">Add course</a>
                     <hr>
                     <a class="dropdown-item" href="{% url 'add_location' %}">Add location</a>
