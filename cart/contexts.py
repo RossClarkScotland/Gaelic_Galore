@@ -3,8 +3,8 @@ from courses.models import Course
 
 
 def cart_contents(request):
-# handles the shopping cart contents
-# based on logic as shown in Boutique Ado walkthrough project
+    """handles the shopping cart contents
+    based on logic as shown in Boutique Ado walkthrough project"""
     cart_items = []
     total = 0
     counter = 0
@@ -20,11 +20,10 @@ def cart_contents(request):
             'course': course,
         })
 
-
     context = {
-        'cart_items' : cart_items,
+        'cart_items': cart_items,
         'total': total,
-        'counter' : counter,
+        'counter': counter,
     }
 
     return context
