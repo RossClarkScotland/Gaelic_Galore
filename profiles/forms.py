@@ -3,13 +3,17 @@ from .models import UserProfile
 
 # as shown in Boutique Ado walkthrough project
 
+
 class UserProfileForm(forms.ModelForm):
+    """sets up user profile"""
     class Meta:
+        """user profile form meta class"""
         model = UserProfile()
         exclude = ('user',)
 
     def __init__(self, *args, **kwargs):
-        # add placeholders + classes, remove auto-generated labels + set autofocus
+        """ add placeholders + classes,
+        remove auto-generated labels + set autofocus"""
         super().__init__(*args, **kwargs)
         placeholders = {
             'default_phone_number': 'phone_number',

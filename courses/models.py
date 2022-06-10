@@ -4,6 +4,7 @@ from locations.models import Location
 
 
 class Course(models.Model):
+    """sets up instances of a course"""
     location = models.ForeignKey(Location, blank=True,
                                  null=True, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
@@ -15,8 +16,8 @@ class Course(models.Model):
     image2 = models.ImageField(null=True, blank=True)
 
     def __str__(self):
-        return self.title
+        return str(self.title)
 
     def get_absolute_url(self):
-        # establishes canonical url for the Course model
+        """ establishes canonical url for the Course model """
         return reverse('course_detail', args=[str(self.id)])

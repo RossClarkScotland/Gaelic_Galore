@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView
-from .models import Course
 from django.db.models import Q
+from .models import Course
 from .forms import CourseForm
 
 # Create your views here.
@@ -73,7 +73,8 @@ class BeginnerListView(ListView):
 def add_course(request):
     """ adds course to the site """
     if not request.user.is_superuser:
-        messages.error(request, 'Tha sinn duilich. This page is only for site admin.')
+        messages.error(request, 'Tha sinn duilich.'
+                       'This page is only for site admin.')
         return redirect(reverse('home'))
     if request.method == 'POST':
         form = CourseForm(request.POST, request.FILES)
@@ -98,7 +99,8 @@ def add_course(request):
 def edit_course(request, course_id):
     """ edits a course on the site """
     if not request.user.is_superuser:
-        messages.error(request, 'Tha sinn duilich. This page is only for site admin.')
+        messages.error(request, 'Tha sinn duilich.'
+                       'This page is only for site admin.')
         return redirect(reverse('home'))
     course = get_object_or_404(Course, pk=course_id)
     if request.method == 'POST':
@@ -106,9 +108,12 @@ def edit_course(request, course_id):
         if form.is_valid():
             form.save()
             messages.success(request, 'Sgonneil! Updated course!')
-            return redirect(reverse('course_detail', args=[course.id]))
+            return redirect(
+                            reverse('course_detail',
+                                    args=[course.id]))
         else:
-            messages.error(request, 'Tha sin duilich. Failed to update course.')
+            messages.error(request, 'Tha sin duilich.'
+                                    'Failed to update course.')
     else:
         form = CourseForm(instance=course)
         messages.info(request, f'You are editing {course.title}')
@@ -126,7 +131,8 @@ def edit_course(request, course_id):
 def delete_course(request, course_id):
     """ delete course store site """
     if not request.user.is_superuser:
-        messages.error(request, 'Tha sinn duilich. This page is only for site admin.')
+        messages.error(request, 'Tha sinn duilich.'
+                       'This page is only for site admin.')
         return redirect(reverse('home'))
     course = get_object_or_404(Course, pk=course_id)
     course.delete()

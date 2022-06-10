@@ -27,7 +27,8 @@ class LocationDetailView(DetailView):
 def add_location(request):
     """ adds location to the site """
     if not request.user.is_superuser:
-        messages.error(request, 'Tha sinn duilich. This page is only for site admin.')
+        messages.error(request, 'Tha sinn duilich. '
+                       'This page is only for site admin.')
         return redirect(reverse('home'))
     if request.method == 'POST':
         form = LocationForm(request.POST, request.FILES)
@@ -36,7 +37,8 @@ def add_location(request):
             messages.success(request, 'Sgonneil! New location added!')
             return redirect(reverse('location_detail', args=[location.id]))
         else:
-            messages.error(request, 'Tha sinn duilich! Failed to add location.')
+            messages.error(request, 'Tha sinn duilich!'
+                           'Failed to add location.')
     else:
         form = LocationForm()
 
@@ -52,7 +54,8 @@ def add_location(request):
 def edit_location(request, location_id):
     """ edits a location on the site """
     if not request.user.is_superuser:
-        messages.error(request, 'Tha sinn duilich. This page is only for site admin.')
+        messages.error(request, 'Tha sinn duilich.'
+                       'This page is only for site admin.')
         return redirect(reverse('home'))
     location = get_object_or_404(Location, pk=location_id)
     if request.method == 'POST':
@@ -62,7 +65,8 @@ def edit_location(request, location_id):
             messages.success(request, 'Sgonneil! Updated location!')
             return redirect(reverse('location_detail', args=[location.id]))
         else:
-            messages.error(request, 'Tha sin duilich. Failed to update location.')
+            messages.error(request, 'Tha sin duilich.'
+                           'Failed to update location.')
     else:
         form = LocationForm(instance=location)
         messages.info(request, f'You are editing {location.name}')
@@ -80,7 +84,8 @@ def edit_location(request, location_id):
 def delete_location(request, location_id):
     """ delete location """
     if not request.user.is_superuser:
-        messages.error(request, 'Tha sinn duilich. This page is only for site admin.')
+        messages.error(request, 'Tha sinn duilich.'
+                       'This page is only for site admin.')
         return redirect(reverse('home'))
     location = get_object_or_404(Location, pk=location_id)
     location.delete()

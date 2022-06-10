@@ -6,7 +6,7 @@ from django_countries.fields import CountryField
 
 
 class UserProfile(models.Model):
-    # keeps default delivery info and order history
+    """ keeps default delivery info and order history """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     default_phone_number = models.CharField(max_length=20,
                                             null=True,
@@ -29,7 +29,7 @@ class UserProfile(models.Model):
 
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
-    # creates or updates user profile
+    """ creates or updates user profile """
     if created:
         UserProfile.objects.create(user=instance)
         # saves profile of existing users

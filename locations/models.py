@@ -3,6 +3,7 @@ from django.urls import reverse
 
 
 class Location(models.Model):
+    """sets up instances of a location"""
     name = models.CharField(max_length=100)
     description_place = models.TextField()
     description_accomodation = models.TextField()
@@ -12,7 +13,7 @@ class Location(models.Model):
     image3 = models.ImageField(null=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
     def get_absolute_url(self):
         """ establishes canonical url for the Location model """
