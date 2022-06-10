@@ -7,15 +7,17 @@ from .forms import LocationForm
 
 
 # Create your views here.
+
+
 class LocationListView(ListView):
-    # returns all locations
+    """ returns all locations """
     model = Location
     context_object_name = 'location_list'
     template_name = 'locations/location_list.html'
 
 
 class LocationDetailView(DetailView):
-    # returns individual locations
+    """ returns individual locations """
     model = Location
     context_object_name = 'location'
     template_name = 'locations/location_detail.html'
@@ -23,7 +25,7 @@ class LocationDetailView(DetailView):
 
 @login_required
 def add_location(request):
-    # adds location to the site
+    """ adds location to the site """
     if not request.user.is_superuser:
         messages.error(request, 'Tha sinn duilich. This page is only for site admin.')
         return redirect(reverse('home'))
@@ -48,7 +50,7 @@ def add_location(request):
 
 @login_required
 def edit_location(request, location_id):
-    # edits a location on the site
+    """ edits a location on the site """
     if not request.user.is_superuser:
         messages.error(request, 'Tha sinn duilich. This page is only for site admin.')
         return redirect(reverse('home'))

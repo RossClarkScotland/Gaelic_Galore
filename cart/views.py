@@ -4,6 +4,8 @@ from django.contrib import messages
 from courses.models import Course
 
 # Create your views here.
+
+
 class CartView(TemplateView):
     """renders the shopping cart page"""
     template_name = 'cart/cart.html'
@@ -19,7 +21,8 @@ def add_cart_item(request, item_id):
 
     if item_id in list(cart.keys()):
         cart[item_id] += qty
-        messages.success(request, f'Number of {course.title} participants updated!')
+        messages.success(request,
+                         f'Number of {course.title} participants updated!')
     else:
         cart[item_id] = qty
         messages.success(request, f'{course.title} added to cart')
@@ -27,7 +30,6 @@ def add_cart_item(request, item_id):
     request.session['cart'] = cart
     return redirect(redirect_url)
 
- 
 
 def adjust_cart_item_qty(request, item_id):
     """changes number of items in the cart
@@ -38,7 +40,8 @@ def adjust_cart_item_qty(request, item_id):
 
     if qty > 0:
         cart[item_id] = qty
-        messages.success(request, f'Number of {course.title} participants updated!')
+        messages.success(request,
+                         f'Number of {course.title} participants updated!')
     else:
         cart.pop(item_id)
         messages.success(request, f'{course.title} removed from your cart')

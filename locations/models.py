@@ -17,5 +17,3 @@ class Location(models.Model):
     def get_absolute_url(self):
         """ establishes canonical url for the Location model """
         return reverse('location_detail', args=[str(self.id)])
-
-

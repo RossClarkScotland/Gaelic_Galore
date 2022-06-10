@@ -40,8 +40,6 @@ class SearchResultsListView(ListView):
             Q(level__icontains=query) |
             Q(course_description__icontains=query)
         )
-    """ Note from the above the different syntax required when
-    searching on a foreign key!!!!"""
 
 
 class AdvancedListView(ListView):

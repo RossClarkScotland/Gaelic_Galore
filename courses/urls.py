@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
-from .views import CourseListView, CourseDetailView, SearchResultsListView, AdvancedListView, IntermediateListView, BeginnerListView
+from .views import (
+    CourseListView, CourseDetailView, SearchResultsListView,
+    AdvancedListView, IntermediateListView, BeginnerListView)
 
 
 urlpatterns = [

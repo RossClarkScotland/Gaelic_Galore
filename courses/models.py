@@ -4,7 +4,8 @@ from locations.models import Location
 
 
 class Course(models.Model):
-    location = models.ForeignKey(Location, blank=True, null=True, on_delete=models.CASCADE)
+    location = models.ForeignKey(Location, blank=True,
+                                 null=True, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     level = models.CharField(max_length=200)
     course_description = models.TextField(null=True, blank=True)

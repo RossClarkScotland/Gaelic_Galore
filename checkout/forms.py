@@ -5,7 +5,9 @@ from .models import Order
 
 
 class OrderForm(forms.ModelForm):
+    """establishes the order form"""
     class Meta:
+        """sets up order form fields"""
         model = Order
         fields = ('full_name', 'email', 'phone_number',
                   'street_address1', 'street_address2',
