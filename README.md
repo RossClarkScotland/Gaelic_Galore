@@ -10,7 +10,7 @@ A full user experience design document, detailing the five planes of design for 
 
 ## **Features: Existing features (For screenshots of features, see the separate UX PDF)**
 
-###### **All pages**
+### **All pages**
 
 - The navigation bar allows users to easily navigate the pages of the site by giving a simple site overview.
 - To provide a cleaner aesthetic, the navigation bar appears on smaller devices the homepage in the form of a hamburger-style dropdown menu.
@@ -18,73 +18,73 @@ A full user experience design document, detailing the five planes of design for 
 - The decorative favicon uses the Saltire, the Scottish flag, to both indicate that the Gaelic in question is Scottish Gaelic, i.e. as opposed to Gaelige, and to fit in with the overall (blue) design accentuating Scottish cultural aspects.
 - These features, as well as Django messages, are enabled by the base.html template content applying to all pages of the website, other than index.html which was coded separately to better apply and style its background images.
 
-###### **Index.html**
+### **Index.html**
 
 - The homepage navigation changes its design arrangement to make best use of the device on which it appears. Index.html contains vivid background images (from Pixabay) depicting scenes from the Hebrides, where Gaelic has traditionally been spoken. Via media queries, the background image changes from a landscape image (for medium and large devices) to a horizontal image (for small devices).
 - As stated above in the section on information architecture, the items in the navigation bar vary on the homepage, depending on whether or not the user is logged in.
 
-###### **Add location page**
+### **Add location page**
 
 - The add location page provides a form to enable superusers to add a new location to the database, entering appropriate text and up to three images.
 
-###### **Add course page**
+### **Add course page**
 
 - The add course page provides a form to enable superusers to add a new course to the database, entering the location, title, level, a description, and up to two images.
 
-###### **Courses: listview pages**
+### **Courses: listview pages**
 
 - The course listview pages, accessed vie the navbar _Courses_ element, filter the courses in the database to show Bootstrap cards with initial details for: all courses, advanced courses, intermediate courses, or beginners courses based on the user&#39;s choice.
 
-###### **Courses: detailview pages**
+### **Courses: detailview pages**
 
 - The course detail view pages provide information on specific courses and allow users to add courses to their shopping carts. Users may also increase and decrease the amount of participants as they wish.
 - Superusers may access the edit / delete course form from this page.
 - Upon a user adding an item to their cart, a success toast appears which allows users to navigate directly to the checkout page.
 
-###### **Courses: Edit**
+### **Courses: Edit**
 
 - The edit course page provides a form for superusers to change the content of course detail pages.
 
-###### **Cart**
+### **Cart**
 
 - The shopping cart page allows users to increase, decrease or delete the number of items in their shopping cart
 - If the user&#39;s cart is empty, a message tells them so and provides a button taking them back to the &#39;all courses&#39; list view
 
-###### **Locations: listview page**
+### **Locations: listview page**
 
 - The course listview pages, accessed vie the navbar _Courses_ element, filter the courses in the database to show Bootstrap cards with initial details of all courses, advanced courses, intermediate courses or beginners courses based on the user&#39;s choice.
 
-###### **Contact page**
+### **Contact page**
 
 - This is a static html site which provides a contact email address for users.
 
-###### **Login page**
+### **Login page**
 
 - The login page, powered by a Django allauth form, allows users to securely log in.
 - A &#39;Forgot your password&#39; link takes users to a password reset page
 
-###### **Password reset page**
+### **Password reset page**
 
 - This page provides a form to initiate the allauth reset password process
 
-###### **Logout page**
+### **Logout page**
 
 - The logout section of the navbar takes users to a page which asks them whether they are sure they want to log out and provides a button to allow them to do so. Logging out takes the user back to the homepage.
 
-###### **Checkout page**
+### **Checkout page**
 
 - The checkout page provides a list of items in the user&#39;s cart, a Stripe-powered form for payment, and buttons to allow the user to either complete the purchase or go back to their shopping cart.
 - A notification below the payment form also alerts users to how much they will be charged for their purchase.
 
-###### **Checkout success page**
+### **Checkout success page**
 
 - The checkout success page gives the reader a breakdown of their purchase and order number, and informs them of the automatic email they will receive to confirm the order. However, if the order is unsuccessful, a message appears at the bottom of the checkout page informing the user.
 
-###### **Profile page**
+### **Profile page**
 
 - The user profile page provides a form for users to change their billing address and a list of previous purchases.
 
-###### **Search results page**
+### **Search results page**
 
 - The search results page shows courses which contain the word that the user searched for, whether the words appear in either the course title or details
 
@@ -153,19 +153,19 @@ Additionally, I had, despite the time constraints, planned a couple of features 
 
 In addition to checking the application&#39;s functionality using browser developer tools, the site has been manually checked and found to function as desired on the following devices:
 
-###### **Laptops:**
+### **Laptops:**
 
 - Lenovo Yoga 530 (checked by both myself and my wife, Anita)
 - HP 255 G5 Notebook (checked by both myself and my wife, Anita)
 - Macbook Air (checked by my father, George)
 - Lenovo Thinkpad x390 (checked by myself)
 
-###### **Tablets:**
+### **Tablets:**
 
 - Kindle Fire 3 HD (checked by both myself and my wife, Anita)
 - iPad mini 3 (checked by my father, George)
 
-###### **Smartphones:**
+### **Smartphones:**
 
 - Samsung Galaxy J4+ (checked by myself)
 - Samsung A50 (checked by my wife, Anita)
@@ -186,7 +186,7 @@ To meet the needs required above, the website requires mixed multimedia content 
 
 To create this project, I used the Code Institute template: [https://github.com/Code-Institute-Org/gitpod-full-template](https://github.com/Code-Institute-Org/gitpod-full-template)
 
-###### **To create a project with this template:**
+### **To create a project with this template:**
 
 - Create GitHub and GitPod accounts.
 - Navigate to [https://github.com/Code-Institute-Org/gitpod-full-template](https://github.com/Code-Institute-Org/gitpod-full-template)
@@ -205,7 +205,7 @@ To create this project, I used the Code Institute template: [https://github.com/
   - python manage.py makemigrations
   - python manage.py migrate
 
-###### **Requirements:**
+### **Requirements:**
 
   - asgiref==3.5.1
   - boto3==1.23.8
@@ -228,7 +228,7 @@ To create this project, I used the Code Institute template: [https://github.com/
   - sqlparse==0.4.2
   - stripe==3.0.0
 
-###### **Cloning the project:**
+### **Cloning the project:**
 
 - To clone the project, follow the steps providedby GitHub here: [Cloning a repository - GitHub Docs](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 - The following environment variables must be added to the project&#39;s env.py file:
@@ -266,7 +266,7 @@ os.environ[&quot;AWS\_SECRET\_ACCESS\_KEY&quot;] = &#39;Your AWS secret access k
   - Navigate to _Settings \&gt; View Credentials_
   - Find the URI and copy the whole thing in at the database url environment variable.
 
-###### **Heroku deployment**
+### **Heroku deployment**
 
 To deploy the project on Heroku:
 
@@ -295,17 +295,22 @@ DATABASES = {
 - Uncomment out the original _DATABASES_ setting in _settings.py_ and remove your Heroku / dj\_database one so that you don&#39;t push it to GitHub.
 - Commit changes via the terminal.
 - Set the if . . . else . . . statement below _in settings.py_. This will ensure that you connect to the postgres database when the app runs on Heroku and to sqlite otherwise.
-- if&#39;DATABASE\_URL&#39;in os.environ:
--     DATABASES = {
--         &#39;default&#39;: dj\_database\_url.parse(os.environ.get(&#39;DATABASE\_URL&#39;))
--     }
-- else:
--     DATABASES = {
--         &#39;default&#39;: {
--             &#39;ENGINE&#39;: &#39;django.db.backends.sqlite3&#39;,
--             &#39;NAME&#39;: os.path.join(BASE\_DIR, &#39;db.sqlite3&#39;),
--         }
--     }
+
+```
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+       'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+```
+
+
 - Type _pip3 install gunicorn_ into the command line, then freeze requirements.
 - Create a Procfile and and the following to it:
   - web: gunicorn gaelic\_galore.wsgi:application
@@ -344,11 +349,11 @@ DATABASES = {
   - USE\_AWS = True
 - As stated above, information on how to find Stripe and AWS keys can be found in the Stripe and AWS documentation.
 
-###### **Amazon Web Services S3 Deployment**
+### **Amazon Web Services S3 Deployment**
 
 - To store static files and images on AWS S3, follow the instructions in the AWS S3 User Guide here: [What is Amazon S3? - Amazon Simple Storage Service](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
 
-###### **Setting up automatic emails**
+### **Setting up automatic emails**
 
 - Log into a gmail account and go to _settings._
 - Click _Accounts and Import_ \&gt; _Other Google account settings \&gt; Security_
@@ -361,37 +366,29 @@ DATABASES = {
 - Add another Config Var, _EMAIL\_HOST\_USER_, and set it as your gmail address.
 - Ensure that the following is in your _Settings.py_:
 
-if&#39;DEVELOPMENT&#39;in os.environ:
-
-    EMAIL\_BACKEND = &#39;django.core.mail.backends.console.EmailBackend&#39;
-
-    DEFAULT\_FROM\_EMAIL = &#39;rossclarkscotland@gmail.com&#39;
-
+```
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'rossclarkscotland@gmail.com'
 else:
-
-    EMAIL\_BACKEND = &#39;django.core.mail.backends.smtp.EmailBackend&#39;
-
-    EMAIL\_USE\_TLS = True
-
-    EMAIL\_PORT = 587
-
-    EMAIL\_HOST = &#39;smtp.gmail.com&#39;
-
-    EMAIL\_HOST\_USER = os.environ.get(&#39;EMAIL\_HOST\_USER&#39;)
-
-    EMAIL\_HOST\_PASSWORD = os.environ.get(&#39;EMAIL\_HOST\_PASS&#39;)
-
-    DEFAULT\_FROM\_EMAIL = os.environ.get(&#39;EMAIL\_HOST\_USER&#39;)
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+```
 
 - Add, commit, and push changes to GitHub/Heroku.
 
 ## **Credits**
 
-###### **Media:**
+### **Media:**
 
 - All site images come from Pixabay
 
-###### **Code:**
+### **Code:**
 
 - The project is largely based on the methods and code taught in the Boutique Ado walkthrough project in the as part of Code Institute&#39;s _Fullstack Frameworks_ module.
 - I learned the static and template file structure, as well as how to build listviews and detailviews, from _Django for Professionals_ by William S. Vincent.
