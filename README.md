@@ -1,5 +1,9 @@
 # **Gaelic Galore**
 
+<img width="665" alt="responsive" src="https://user-images.githubusercontent.com/66358670/173203385-fde6f16a-8c94-438e-95af-8f6ce5ad758f.png">
+
+###### image created via ami.responsivedesign.is/?ref=producthunt
+
 _Gaelic Galore_ is my final project submitted for assessment in the Diploma in Software Engineering with Code Institute. It forms the minimum viable product for an e-commerce site for a fictional Gaelic-language school. The site enables education professionals to offer their courses to potential clients and allows the growing number of learners interested in Scottish Gaelic to find a means of learning a language for which courses are often limited by the relatively low number of speakers.
 
 The full site is deployed via Heroku at: [gaelic-galore · Activity | Heroku](https://gaelic-galore.herokuapp.com/)
