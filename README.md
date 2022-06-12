@@ -177,6 +177,7 @@ In addition to checking the application&#39;s functionality using browser develo
 - iPhone SE (checked by my friend, Kirill)
 
 ## **Bugs**
+Occasionally, a Stripe-related error appears in the console when navigating through the site. Neither I nor Code Institite tutors have been able to reproduce it by performing any one particular action and I have therefore been advised by both Code Institute tutors and my project mentor that this is an issue on the Stripe end rather than an error in my code. 
 
 At the time of writing, I have run out of time without being able to fix the bug in the method shown in the _Boutique Ado_ walkthrough project, i.e. that the minus button on the shopping cart button enables users to select quantities of less than zero.
 
@@ -403,4 +404,6 @@ else:
 - I also owe a debt to my father, George, for agreeing to test and give feedback on site functionality, particularly as regards the various iterations of the game.
 - I would also like to thank my friend Milana for being awesome at all things design and never being unwilling to say when some aspect of my design is less than awesome.
 - A huge shout out must go to Rebecca of the Code Institute tutoring staff, who was there with great advice and fantastic explanations to help me out of the most difficult spots during this project.
+- Thank you to everyone on the Code Institute Slack page for being willing to lend an eye and a word of advice when required.
+- Particular Slack honorifics must go to mentor Eventyret, tutor Ed B_alum, and my fellow students Abi Westcott and Ken Wee Chin for helping out when they were already done with their own projects and deserving of spending their time on something far better than fielding my last-minute, panicky questions.
 - Finally, I would like to express my gratitude to my course mentor, Spencer Barribal, for offering encouragement and useful ideas, and to the Code Institute tutors and Slack community for providing advice and for humouring me when I asked stupid questions.
