@@ -12,6 +12,10 @@ The full site is deployed via Heroku at: [gaelic-galore · Activity | Heroku](ht
 
 A full user experience design document, detailing the five planes of design for _Gaelic Galore,_ complete with user stories, [appears as a separate PDF here.](https://github.com/RossClarkScotland/Gaelic_Galore/blob/main/pdfs/UX.pdf)
 
+## **Database Design**
+
+A database design diagram for the project [appears as a separate PDF here.](https://github.com/RossClarkScotland/Gaelic_Galore/blob/main/pdfs/DbDesign.pdf)
+
 ## **Features: Existing features (For screenshots of features, see the separate UX PDF)**
 
 ### **All pages**
