@@ -9,7 +9,7 @@
         var plusDisabled = currentValue > 15;
         $(`#decrease-qty_${itemId}`).prop('disabled', minusDisabled);
         $(`#increase-qty_${itemId}`).prop('disabled', plusDisabled);
-    }
+    };
 
     // Enabling/disabling inputs on page load
     var allQtyInputs = $('.qty_input');

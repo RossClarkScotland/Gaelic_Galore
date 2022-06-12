@@ -124,14 +124,15 @@
       {% endfor %}
   </div>
     {% endif %}
+  
     
     {% block content %}
 
     {% endblock content %}
+  </div>
 
     {% block postloadjs %}
     <script src="{% static 'js/base.js' %}"></script>
     {% endblock %}
-  </div>
 </body>
 </html>

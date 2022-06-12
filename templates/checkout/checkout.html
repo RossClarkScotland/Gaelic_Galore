@@ -12,27 +12,27 @@
     <h4 class="logo-font mt-4 mb-4 text-center col-6 offset-3">Your courses</h4>
         
     {% for item in cart_items %}
-    <section class="row">
+    <div class="row">
         <div class="col-6 offset-3">
             <div class="card card-wide mb-5">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item list-group-item-primary text-center text-uppercase">
-                        <strong>Course: {{ item.course.title }}</li></strong>
+                        <strong>Course:</strong> {{ item.course.title }}</li>
+                    <li class="list-group-item text-center">
+                        <strong>Price per person:</strong> {{ item.course.price }}</li>
                     <li class="list-group-item text-center"><strong>
-                        Price per person: {{ item.course.price }}</li></strong>
-                    <li class="list-group-item text-center"><strong>
-                        Quantity: {{ item.qty }}</li></strong>
+                        Quantity:</strong> {{ item.qty }}</li>
                 </ul>
             </div>
         </div>
-    </section>
+    </div>
     {% endfor %}
 
     <!--Complete order form-->
     <div class="col-12">
-        <strong>
-            <h4 class="text-center mb-3">Fill out the form to complete your order</h4>
-        </strong>
+            <h4 class="text-center mb-3">
+                <strong>Fill out the form to complete your order</strong>
+            </h4>
         <form action="{% url 'checkout' %}" method="POST" id="payment-form">
             {% csrf_token %}
             <fieldset class="col-8 offset-2">
@@ -57,10 +57,10 @@
                         <label class="form-check-label" for="id-save-info">Save delivery info</label>
                         <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
                     {% else %}
-                        <label class="form-check-label" for="id-save-info">
+                        <div>
                             <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
                             <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
-                        </label>
+                        </div>
                     {% endif %}
                 </div>
             </fieldset>
@@ -99,7 +99,6 @@
             </div>
         </form>
     </div>
-</div>
 {% endblock %}
 
 {% block postloadjs %}
